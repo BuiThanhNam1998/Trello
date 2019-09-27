@@ -1,0 +1,149 @@
+@font-face{
+	font-family: roboto-bold;
+	src: url('../fonts/Roboto-Bold.ttf');
+}
+@font-face{
+	font-family: roboto-regular;
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face{
+	font-family: roboto-light;
+	src: url('../fonts/Roboto-Light.ttf');
+}
+body{
+	margin: 0;
+	font-size: 14px;
+	background: #ebebeb;
+	font-family: roboto-regular;
+	height: 100%;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+    transition: color 0.3s linear;
+}
+p{
+	margin: 0;
+}
+input, button{
+	outline: 0;
+}
+.fix-image{
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+}
+/*INDEX*/
+/*HEADER*/
+header{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+	background: #026aa7;
+	height: 40px;
+	align-items: center;
+}
+header a{
+	color: #fff;
+	padding: 8px;
+	background: #4e97c2;
+	border-radius: 5px;
+	font-weight: 700;
+}
+header a:hover{
+	background: hsla(0,0%,100%,.2);
+	color: #fff;
+}
+/*CONTENT*/
+.main-content-home{
+	margin-top: 30px;
+}
+.main-content-home-title{
+	font-size: 22px;
+	font-weight: 700;
+	font-family: roboto-bold;
+	color: #0079bf;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.table-item{
+	height: 150px;
+	margin-bottom: 30px;
+	position: relative;
+	border-radius: 5px;
+	display: flex;
+}
+.table-item-title{
+	color: #fff;
+	font-weight: 700;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 10px;
+}
+.table-item-title:hover{
+	color: #fff;
+}
+.table-item img{
+	border-radius: 8px;
+}
+/*TABLE*/
+.main-wrap{
+	height: 100vh;
+	background-image: url('../images/image_02.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 40px;
+}
+.header-table{
+	background: rgba(0,0,0,.32);
+	position: absolute;
+	width: 100%;
+}
+.header-table a{
+	background-color: hsla(0,0%,100%,.3);
+}
+.table-breadcrumb{
+	/*background: hsla(0,0%,100%,.24);*/
+	height: 48px;
+	display: flex;
+	align-items: center;
+}
+.table-breadcrumb-title{
+	color: #fff;
+	font-size: 18px;
+	padding-left: 12px;
+	font-weight: 700;
+}
+.main-content-table{
+	height: 100vh;
+	width: 100%;
+	display: flex;
+}
+.main-table-item{
+	width: 272px;
+	height: max-content;
+	min-height: 200px;
+	margin: 0 4px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #ebecf0;
+}
+.main-table-item-title{
+	padding: 10px 5px;
+}
+.main-task{
+	background: #fff;
+	border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    cursor: pointer;
+    padding: 6px 8px;
+    margin-bottom: 10px;
+}
+.main-task .main-task-title{
+	color: #172b4d;
+}
