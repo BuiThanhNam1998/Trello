@@ -25,9 +25,10 @@
 		</section>
 		<!-- content -->
 		<section class="main-content-table">
+			<?php foreach($sub_tables as $key => $sub_table){ ?>
 			<div class="main-table-item">
 				<div class="main-table-item-title">
-					<span>Yêu cầu</span>
+					<span><?=$sub_table->get_name();?></span>
 				</div>
 				<div class="main-table-item-content droppable">
 					<div class="draggable">
@@ -49,7 +50,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="main-table-item">
+			<?php } ?>
+
+			<!-- <div class="main-table-item">
 				<div class="main-table-item-title">
 					<span>Hoàn thành</span>
 				</div>
@@ -65,7 +68,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</section>
 	</section>
 
