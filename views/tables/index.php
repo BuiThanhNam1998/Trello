@@ -13,8 +13,8 @@
 	<title>Quản lý công việc</title>
 	<meta charset="UTF-8">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 	<!-- /header -->
@@ -39,7 +39,7 @@
 				<?php foreach($tables as $key => $table){ ?>
 				<div class="col-lg-3">
 					<div class="table-item">
-						<a href="#" title="">
+						<a href="#" title="" class="thumb">
 							<img src="<?=$table->get_image()?>" alt="" class="fix-image">
 						</a>
 						<a href="#" title="" class="table-item-title"><?=$table->get_name()?></a>
@@ -49,7 +49,7 @@
 			</div>
 		</div>
 	</section>
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

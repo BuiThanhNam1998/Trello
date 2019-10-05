@@ -77,6 +77,9 @@ header a:hover{
 	border-radius: 5px;
 	display: flex;
 }
+.table-item .thumb{
+	height: 100%;
+}
 .table-item-title{
 	color: #fff;
 	font-weight: 700;

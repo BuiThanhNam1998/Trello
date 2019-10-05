@@ -23,7 +23,6 @@ class Table
     foreach ($req->fetchAll() as $item) {
       $list[] = new Table($item['id'], $item['name'], $item['status'], $item['image']);
     }
-
     return $list;
   }
   public function get_name(){

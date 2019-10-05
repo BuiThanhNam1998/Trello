@@ -4,8 +4,8 @@
 	<title>Quản lý công việc</title>
 	<meta charset="UTF-8">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
 	<!-- /header -->
@@ -21,7 +21,7 @@
 	<section class="main-wrap">
 		<!-- breadcrumb -->
 		<section class="table-breadcrumb">
-			<h4 class="table-breadcrumb-title">Bài tập web tuần 1</h4>
+			<h4 class="table-breadcrumb-title">Bài tập web tuần 1 <?=$table_id?></h4>
 		</section>
 		<!-- content -->
 		<section class="main-content-table">
@@ -95,9 +95,9 @@
 	      </div>
 	    </div>
 	</div>
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery-ui.min.js"></script>
 	<script>
 	  	$( function() {
 		    $(".draggable").draggable({
