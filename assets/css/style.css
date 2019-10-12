@@ -150,3 +150,6 @@ header a:hover{
 .main-task .main-task-title{
 	color: #172b4d;
 }
+.main-table-item-content{
+	min-height: 100px;
+}

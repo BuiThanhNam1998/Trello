@@ -11,7 +11,7 @@ class TablesController extends BaseController
 
   public function index()
   {
-    $tables = Table::all();
+    $tables = Table::get_all();
     $data = array('tables' => $tables);
     $this->render('index', $data);
   }

@@ -2,6 +2,7 @@
 require_once('controllers/base_controller.php');
 require_once('models/sub_table.php');
 require_once('models/table.php');
+require_once('models/task.php');
 
 class SubTablesController extends BaseController
 {
@@ -14,8 +15,13 @@ class SubTablesController extends BaseController
   {
     $table_id = isset($_GET['table_id']) ? $_GET['table_id'] : '';
     if($table_id){
-      $sub_tables = SubTable::get_table($table_id); 
-      $data = array('sub_tables' => $sub_tables, 'table_id' => $table_id);
+      $cls_table = new Table();
+      $cls_sub_table = new SubTable();
+      $cls_task = new Task();
+      $table = $cls_table->get_one($table_id);
+      $sub_tables = $cls_sub_table->get_table($table_id); 
+      $tasks =  $table->get_tasks(); 
+      $data = array('sub_tables' => $sub_tables, 'table' => $table, 'tasks' => $tasks);
       $this->render('index', $data);
     }
     else{

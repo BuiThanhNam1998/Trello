@@ -8,7 +8,16 @@ if (isset($_GET['controller'])) {
 	} else {
 		$action = 'index';
 	}
-} else {
+}
+elseif (isset($_POST['controller'])) {
+ 	$controller = $_POST['controller'];
+	if (isset($_POST['action'])) {
+		$action = $_POST['action'];
+	} else {
+		$action = 'index';
+	}
+} 
+else {
   	$controller = 'pages';
   	$action = 'home';
 }
