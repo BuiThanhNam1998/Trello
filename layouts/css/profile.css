@@ -1,0 +1,98 @@
+/*CONTENT*/
+*{
+	padding: 0;
+	margin: 0;
+}
+@font-face{
+	font-family: roboto-bold;
+	src: url('../fonts/Roboto-Bold.ttf');
+}
+@font-face{
+	font-family: roboto-regular;
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face{
+	font-family: roboto-light;
+	src: url('../fonts/Roboto-Light.ttf');
+}
+body{
+	margin: 0;
+	font-size: 14px;
+	background: #ebebeb;
+	font-family: roboto-regular;
+	height: 100%;
+}
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+    transition: color 0.3s linear;
+}
+input, button{
+	outline: 0;
+}
+.fix-image{
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+}
+/*INDEX*/
+/*HEADER*/
+header{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+	background: #026aa7;
+	height: 40px;
+	align-items: center;
+}
+header a{
+	color: #fff;
+	padding: 8px;
+	background: #4e97c2;
+	border-radius: 5px;
+	font-weight: 700;
+}
+header a:hover{
+	background: hsla(0,0%,100%,.2);
+	color: #fff;
+}
+/*Content*/
+
+.border-header
+{
+	background: rgb(195,195,195);
+	width: 100%;
+	height: 200px;
+	
+	font-family: Roboto-Regular;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+.border-header p
+{
+	font-weight: lighter;
+	font-size: 12px;
+	padding-top: 80px;
+	
+}
+.border-header h2
+{
+	font-size: 25px;
+	font-weight: bolder;
+	padding-top: 70px;
+	margin-right: 10px;
+}
+.tab-pills li
+{
+	color: grey;
+	display: inline;
+	height: 25px;
+	justify-content: center;
+
+}
+.tab-pills ul
+{
+	text-align: center;
+	padding: 20px;
+}

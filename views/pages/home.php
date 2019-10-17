@@ -1,3 +1,3 @@
 <?php
-  echo "Webcome !!!";
+  echo "Welcome to our Website!";
 ?>
