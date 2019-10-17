@@ -36,7 +36,7 @@ class Task
 
     if($req){
       foreach ($req->fetchAll() as $item) {
-        $list[] = new SubTable($item['id'], $item['name'], $item['status'], $item['description'], $item['image'], $item['label'], $item['date_start'], $item['finish_date']);
+        $list[] = new SubTable($item['id'], $item['name'], $item['status'], $item['description'], $item['image'], $item['label'], $item['date_start'], $item['date_finish']);
       }
     }
     else{
@@ -53,8 +53,17 @@ class Task
   public function get_status(){
     return $this->status;
   }
+  public function get_image(){
+    return $this->image;
+  }
+  public function get_description(){
+    return $this->description;
+  }
   public function get_sub_table_id(){
     return $this->sub_table_id;
+  }
+  public function get_date_finish(){
+    return $this->date_finish;
   }
   public static function get_table($table_id){
     $cons = 'where status != 0 ';
