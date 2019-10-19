@@ -21,4 +21,5 @@ else {
   	$controller = 'pages';
   	$action = 'home';
 }
+// die($controller);
 require_once('routes.php');
