@@ -5,6 +5,7 @@ class Table{
   private $name;
   private $status;
   private $image;
+  //property and method
 
   function __construct($id = null, $name = null, $status = null, $image = null){
     $this->id = $id;

@@ -31,5 +31,6 @@ class TasksController extends BaseController
     if($sub_table_id && $task_id){
       $task->set_sub_table_id($sub_table_id, $task_id);
     }
+    die();
   }
 }
