@@ -13,6 +13,7 @@ if (!array_key_exists($controller, $controllers) || !in_array($action, $controll
   $controller = 'pages';
   $action = 'error';
 }
+// die($controller);
 
 // Nhúng file định nghĩa controller vào để có thể dùng được class định nghĩa trong file đó
 include_once('controllers/' . $controller . '_controller.php');

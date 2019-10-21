@@ -1,5 +1,6 @@
 <?php
 require_once('basic.php');
+require_once('user.php');
 class Task
 {
   private $id;
@@ -78,4 +79,17 @@ class Task
     $req = $db->query($cons);
     die('a');
   }
+  public function get_user($task_id){
+    $list = [];
+    $cons = 'select users.* from users inner join users inner join tasks_users on users.id = tasks_users.user_id  where tasks_users.tasks_id = ' . $task_id;
+    $db = DB::getInstance();
+    $req = $db->query($cons, PDO::FETCH_ASSOC);
+    if($req){
+      foreach ($req->fetchAll() as $item) {
+        $list[] = User::create($item);
+      }
+      return $list;
+    }
+    return false;
+}
 }

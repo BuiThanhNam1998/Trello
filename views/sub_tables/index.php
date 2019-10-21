@@ -36,7 +36,7 @@
 					<div class="draggable" data-id="<?=$task->get_id()?>">
 						<div class="main-task" data-toggle="modal" data-target="#task<?=$task->get_id()?>">
 							<?php if($task->get_image()){?>
-							<img src="http://localhost/trello<?=$task->get_image()?>" alt="" class="fix-image">
+							<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
 							<?php } ?>
 							<p class="main-task-title"><?=$task->get_name()?></p>
 							<div class="main-task-action">
