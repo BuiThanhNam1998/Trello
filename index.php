@@ -1,6 +1,5 @@
 <?php
 require_once('connection.php');
-
 if (isset($_GET['controller'])) {
 	$controller = $_GET['controller'];
 	if (isset($_GET['action'])) {
