@@ -40,7 +40,7 @@
 						<div class="main-task" data-toggle="modal" data-target="#task<?=$task->get_id()?>">
 							<!-- anh cua task -->
 							<?php if($task->get_image()){?>
-							<img src="http://localhost/trello<?=$task->get_image()?>" alt="" class="fix-image">
+							<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
 							<?php } ?>
 							<!-- ten cua task -->
 							<p class="main-task-title"><?=$task->get_name()?></p>
@@ -68,7 +68,7 @@
 						        </div>
 						        <div class="modal-body">
 						        	<?php if($task->get_image()){?>
-									<img src="http://localhost/trello<?=$task->get_image()?>" alt="" class="fix-image">
+									<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
 									<?php } ?>
 						          	<p><?=$task->get_description()?></p>
 						        </div>
@@ -109,7 +109,7 @@
 					task_id = ui.draggable.data('id');
 					sub_table_id = $(this).data('id');
 
-					$.post('http://localhost/trello/index.php?controller=tasks&action=set_sub_table', {'sub_table_id': sub_table_id, 'task_id' : task_id}, function (data) {
+					$.post('http://localhost:81/trello/index.php?controller=tasks&action=set_sub_table', {'sub_table_id': sub_table_id, 'task_id' : task_id}, function (data) {
 		                console.log('ok');
 		            }).fail(function (xhr, ajaxOptions, thrownError) { //any errors?
 		                alert(thrownError); //alert with HTTP error
