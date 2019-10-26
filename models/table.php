@@ -28,15 +28,19 @@ class Table{
   public function get_name(){
     return $this->name;
   }
+
   public function get_id(){
     return $this->id;
   }
+
   public function get_image(){
     return $this->image;
   }
+
   public function get_status(){
     return $this->status;
   }
+  
   public function get_one($id){
     $cons = '';
     if($id){

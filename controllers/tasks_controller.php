@@ -3,6 +3,7 @@ require_once('controllers/base_controller.php');
 require_once('models/task.php');
 require_once('models/sub_table.php');
 require_once('models/table.php');
+require_once('models/user.php');
 
 class TasksController extends BaseController
 {
@@ -23,9 +24,13 @@ class TasksController extends BaseController
       $this->render('error');
     }
   }
-  public function get_user(int $task_id){
-    
+
+  public function get_user(){
+    $task = new Task();
+    $users = $cls_task->get_user($task->get_id());
+    return $users;
   }
+
   public function set_sub_table(){
     $sub_table_id = $_POST['sub_table_id'];
     $task_id = $_POST['task_id'];

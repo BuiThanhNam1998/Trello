@@ -147,6 +147,15 @@ header a:hover{
     padding: 6px 8px;
     margin-bottom: 10px;
 }
+.main-task .main-task-users{
+	margin-top: 5px;
+	text-align: right;
+}
+.main-task .main-task-users img{
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}
 .main-task .main-task-title{
 	color: #172b4d;
 }

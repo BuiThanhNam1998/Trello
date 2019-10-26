@@ -23,6 +23,7 @@ class Task
     $this->date_start = $date_start;
     $this->date_finish = $date_finish;
   }
+
   public static function create(array $data){
     $instance = new self();
     foreach($data as $key => $pro){
@@ -30,6 +31,7 @@ class Task
     }
     return $instance;
   }
+
   static function get_all($cons = ''){
     $list = [];
     $db = DB::getInstance();
@@ -45,27 +47,35 @@ class Task
     }
     return $list;
   }
+
   public function get_id(){
     return $this->id;
   }
+
   public function get_name(){
     return $this->name;
   }
+
   public function get_status(){
     return $this->status;
   }
+
   public function get_image(){
     return $this->image;
   }
+
   public function get_description(){
     return $this->description;
   }
+
   public function get_sub_table_id(){
     return $this->sub_table_id;
   }
+
   public function get_date_finish(){
     return $this->date_finish;
   }
+
   public static function get_table($table_id){
     $cons = 'where status != 0 ';
     if($table_id){
@@ -73,23 +83,30 @@ class Task
     }
     return self::get_all($cons);
   }
+
   public static function set_sub_table_id($sub_table_id, $task_id){
     $cons = 'update tasks set sub_table_id = ' . $sub_table_id . ' where id = ' . $task_id;
     $db = DB::getInstance();
     $req = $db->query($cons);
     die('a');
   }
+
   public function get_user($task_id){
     $list = [];
-    $cons = 'select users.* from users inner join users inner join tasks_users on users.id = tasks_users.user_id  where tasks_users.tasks_id = ' . $task_id;
+    $cls_user = new User();
+    // $cons = 'select users.* from users inner join users inner join tasks_users on users.id = tasks_users.user_id  where tasks_users.tasks_id = ' . $task_id;
+    $cons = 'select user_id from tasks_users where task_id = '. $task_id;
     $db = DB::getInstance();
     $req = $db->query($cons, PDO::FETCH_ASSOC);
     if($req){
       foreach ($req->fetchAll() as $item) {
-        $list[] = User::create($item);
+        $item = array_shift($item);
+        $list[] = $cls_user->get_one($item);
       }
+
       return $list;
     }
     return false;
-}
+  }
+
 }

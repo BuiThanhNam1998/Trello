@@ -26,26 +26,39 @@
 		</section>
 		<!-- content -->
 		<section class="main-content-table">
+			<!-- danh sach cac sub table -->
 			<?php foreach($sub_tables as $key => $sub_table){ ?>
 			<div class="main-table-item">
 				<div class="main-table-item-title">
 					<span><?=$sub_table->get_name()?></span>
 				</div>
+
 				<div class="main-table-item-content droppable" data-id="<?=$sub_table->get_id()?>">
-					<?php foreach($tasks as $task){ if($task->get_sub_table_id() == $sub_table->get_id()){?>
+					<!-- danh sach cac task trong sub table -->
+					<?php foreach($tasks as $task){ if($task->get_sub_table_id() == $sub_table->get_id()){ $users = $task->get_user($task->get_id());?>
 					<div class="draggable" data-id="<?=$task->get_id()?>">
 						<div class="main-task" data-toggle="modal" data-target="#task<?=$task->get_id()?>">
+							<!-- anh cua task -->
 							<?php if($task->get_image()){?>
-							<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
+							<img src="http://localhost/trello<?=$task->get_image()?>" alt="" class="fix-image">
 							<?php } ?>
+							<!-- ten cua task -->
 							<p class="main-task-title"><?=$task->get_name()?></p>
 							<div class="main-task-action">
+								<!-- ngay ket thuc cuar task -->
 								<?php if($task->get_date_finish()){ ?>
 								<span class="main-task-finish"><i class="fa fa-clock-o" aria-hidden="true"></i><?=$task->get_date_finish()?></span>
 								<?php } ?>
 							</div>
+
+							<div class="main-task-users">
+								<?php if($users) foreach ($users as $key => $user) { ?>
+								<img src="../trello/<?=$user->get_image()?>" alt="<?=$user->get_username()?>" title="<?=$user->get_username()?>">
+								<?php } ?>
+							</div>
 						</div>
 					</div>
+			
 					<div class="modal fade" id="task<?=$task->get_id()?>">
 					    <div class="modal-dialog">
 					      	<div class="modal-content">
@@ -67,6 +80,7 @@
 					</div>
 					<?php }} ?>
 				</div>
+
 				<div class="box-add-new-task">
 					<span class="ti-plus"></span><a href="#" title="" class="add-new-task">Thêm thẻ khác</a>
 				</div>
