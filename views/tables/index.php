@@ -40,9 +40,9 @@
 				<div class="col-lg-3">
 					<div class="table-item">
 						<a href="#" title="" class="thumb">
-							<img src="<?=$table->get_image()?>" alt="" class="fix-image">
+							<img src="<?=$table['image']?>" alt="" class="fix-image">
 						</a>
-						<a href="#" title="" class="table-item-title"><?=$table->get_name()?></a>
+						<a href="#" title="" class="table-item-title"><?=$table['name']?></a>
 					</div>
 				</div>
 				<?php } ?>

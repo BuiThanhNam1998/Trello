@@ -1,15 +1,15 @@
 <?php 
 class Basic{
 	// private $table;
-	static function get_all($cons = ''){
+	public function get_all($cons = ''){
 	    $list = [];
 	    $db = DB::getInstance();
 	    $req = $db->query('select * from ' . $this->table . $cons);
 
 	    if($req){
-	      foreach ($req->fetchAll() as $item) {
-	        $list[] = new $item;
-	      }
+	      	foreach ($req->fetchAll() as $item) {
+        		$list[] = $item;
+	      	}
 	    }
 	    else{
 	      die('Error!');
@@ -50,7 +50,6 @@ class Basic{
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
 
-
  	public function get_one_special($special){
 	    if(!$special) return false;
 	    $db = DB::getInstance(); 
@@ -62,5 +61,26 @@ class Basic{
 	    }
 	    $result = array_shift($result);
 	    return $result;
+  	}
+
+  	function updateOne($array) {
+  		if (!is_array($array)) 
+  			return false;
+  		// $oneItem = $this->getCache($key_cache); 
+  		// $exists_cache = false; 
+  		// if($oneItem) { 
+  		// 	$exists_cache = true; 
+  		// 	if($oneItem=='null') $oneItem = array();
+  		// } 
+  		$oneItem = array();
+  		$value=''; 
+  		if ($array)foreach($array as $key => $val) {
+  			if (!$value) $value = $key . '="' . addslashes($val) . '"';
+  			else $value.= ',' . $key . '="' . addslashes($val) . '"';
+  			$oneItem[$key] = $val;
+  		}
+  		$db = DB::getInstance(); 
+  		$res = $db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
+  		die('a');
   	}
 }
