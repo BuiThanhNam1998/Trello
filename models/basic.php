@@ -49,7 +49,7 @@ class Basic{
 	    $db = DB::getInstance();
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
-
+	
 
  	public function get_one_special($special){
 	    if(!$special) return false;
@@ -57,10 +57,15 @@ class Basic{
 	    $cons = 'select * from '.$this->table.' where special = '.$special;
 	    $arr = $db->query($cons);
 	    $result = [];
+	    if($arr)
+	{
+	    
 	    foreach ($arr->fetchAll() as $item) {
 	      $result[] = $item;
 	    }
 	    $result = array_shift($result);
+	}
+	    
 	    return $result;
   	}
 }

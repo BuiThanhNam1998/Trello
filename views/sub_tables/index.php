@@ -8,7 +8,7 @@
 		<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
 		<div class="main-popup popup-profile">
 			<div class="main-popup-head">
-				<span>Bùi Thanh Nam</span>
+				<span>Bùi Thanh Nam</span>
 			</div>
 			<div class="main-popup-content">
 				<ul>
@@ -48,16 +48,6 @@
 				</div>
 			</div>
 
-<<<<<<< HEAD
-				<div class="main-table-item-content droppable" data-id="<?=$sub_table->get_id()?>">
-					<!-- danh sach cac task trong sub table -->
-					<?php foreach($tasks as $task){ if($task->get_sub_table_id() == $sub_table->get_id()){ $users = $task->get_user($task->get_id());?>
-					<div class="draggable" data-id="<?=$task->get_id()?>">
-						<div class="main-task" data-toggle="modal" data-target="#task<?=$task->get_id()?>">
-							<!-- anh cua task -->
-							<?php if($task->get_image()){?>
-							<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
-=======
 			<div class="main-table-item-content droppable" data-id="<?=$sub_table['id']?>">
 				<!-- danh sach cac task trong sub table -->
 				<?php foreach($tasks as $task){ if($task['sub_table_id'] == $sub_table['id']){ $users = $cls_task->get_users($task['id']);?>
@@ -73,7 +63,6 @@
 							<!-- ngay ket thuc cuar task -->
 							<?php if($task['date_finish']){ ?>
 							<span class="main-task-finish"><i class="fa fa-clock-o" aria-hidden="true"></i><?=$task['date_finish']?></span>
->>>>>>> 7efdcf851d7786267f098be1a98c833cc33cd7a4
 							<?php } ?>
 						</div>
 
@@ -83,34 +72,6 @@
 							<?php } ?>
 						</div>
 					</div>
-<<<<<<< HEAD
-			
-					<div class="modal fade" id="task<?=$task->get_id()?>">
-					    <div class="modal-dialog">
-					      	<div class="modal-content">
-						        <div class="modal-header">
-						          	<h4 class="modal-title"><?=$task->get_name()?></h4>
-						          	<button type="button" class="close" data-dismiss="modal">&times;</button>
-						        </div>
-						        <div class="modal-body">
-						        	<?php if($task->get_image()){?>
-<<<<<<< HEAD
-									<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
-=======
-									<img src="<?=WEB_DOMAIN?><?=$task->get_image()?>" alt="" class="fix-image">
->>>>>>> 8d764315a232c9cc3623418a679e6a44f6127934
-									<?php } ?>
-						          	<p><?=$task->get_description()?></p>
-						        </div>
-						        <div class="modal-footer">
-						          	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-						        </div>
-					      	</div>
-					    </div>
-					</div>
-					<?php }} ?>
-=======
->>>>>>> 7efdcf851d7786267f098be1a98c833cc33cd7a4
 				</div>
 		
 				<div class="modal fade" id="task<?=$task['id']?>">
@@ -192,13 +153,6 @@
   		var name = $(this).parents('.main-table-item').find('.name-task-add').val();
   		$(this).parents('.main-table-item').find('.name-task-add').val('').focus();
 
-<<<<<<< HEAD
-					$.post('http://localhost:81/trello/index.php?controller=tasks&action=set_sub_table', {'sub_table_id': sub_table_id, 'task_id' : task_id}, function (data) {
-		                console.log('ok');
-		            }).fail(function (xhr, ajaxOptions, thrownError) { //any errors?
-		                alert(thrownError); //alert with HTTP error
-		            })
-=======
         $.ajax({
         	url: "<?=WEB_DOMAIN?>/index.php?controller=tasks&action=add_task",
         	method: 'post',
@@ -232,7 +186,6 @@
   		var table_id = <?=$table['id']?>;
   		var name = $(this).parents('.main-table-item').find('.name-sub-table-add').val();
   		$(this).parents('.main-table-item').find('.name-sub-table-add').val('').focus();
->>>>>>> 7efdcf851d7786267f098be1a98c833cc33cd7a4
 
         $.ajax({
         	url: "<?=WEB_DOMAIN?>/index.php?controller=sub_tables&action=add_sub_table",
