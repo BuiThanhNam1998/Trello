@@ -8,7 +8,11 @@
 		<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
 		<div class="main-popup popup-profile">
 			<div class="main-popup-head">
+<<<<<<< HEAD
 				<span>Bùi Thanh Nam 1998</span>
+=======
+				<span>Bùi Thanh Nam</span>
+>>>>>>> 8d8aaa502fc41dba41bc17ffebb1c7ead51e70da
 			</div>
 			<div class="main-popup-content">
 				<ul>
