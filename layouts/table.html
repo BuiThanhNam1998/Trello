@@ -96,6 +96,7 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+	<!-- drag task -->
 	<script>
 	  	$( function() {
 		    $(".draggable").draggable({
@@ -103,13 +104,15 @@
 		    });
 		    $(".droppable").droppable({
 		      	drop: function( event, ui ) {
-		      			ui.draggable.fadeOut();
-		      			mainTask = '<div class="draggable">' + ui.draggable.html() + '</div>';
-						$(this).append(mainTask);
-						$('.draggable').draggable();
-		      		}
-		    	});
-		  	});
-	 </script>
+	      			ui.draggable.fadeOut();
+	      			mainTask = '<div class="draggable">' + ui.draggable.html() + '</div>';
+					$(this).append(mainTask);
+					$('.draggable').draggable();
+	      		}
+	    	});
+	  	});
+	</script>
+	<!-- add task -->
+
 </body>
 </html>

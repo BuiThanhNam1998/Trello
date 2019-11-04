@@ -58,6 +58,48 @@ header a:hover{
 	background: hsla(0,0%,100%,.2);
 	color: #fff;
 }
+header a.avatar{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+}
+header a.avatar img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.header-right{
+	position: relative;
+}
+.main-popup{
+	position: absolute;
+	width: 304px;
+	background-color: #fff;
+	right: 0;
+	top: 120%;
+	border-radius: 3px;
+    box-shadow: 0 8px 16px -4px rgba(9,30,66,.25), 0 0 0 1px rgba(9,30,66,.08);
+    display: none;
+    z-index: 10;
+}
+.main-popup a, .main-popup span{
+	color: #5e6c84;
+	background-color: transparent;
+	font-weight: 400;
+}
+.main-popup-head{
+	text-align: center;
+	padding: 10px 0;
+	margin: 0 10px;
+	border-bottom: 1px solid rgba(9,30,66,.13);
+}
+.main-popup-content{
+	padding: 10px;
+}
+.main-popup-content li{
+	padding: 10px 0;
+}
 /*CONTENT*/
 .main-content-home{
 	margin-top: 30px;
@@ -138,6 +180,13 @@ header a:hover{
 }
 .main-table-item-title{
 	padding: 10px 5px;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+.table-item-menu-icon{
+	padding: 3px;
+	color: #6b778c;
 }
 .main-task{
 	background: #fff;
@@ -184,14 +233,49 @@ header a:hover{
 	font-size: 14px;
 	font-weight: 700;
 }
-.add-new-task{
+.box-add-new-sub-table span{
+	color: #fff;
+}
+.main-table-add{
+	min-height: auto;
+	background-color: hsla(0,0%,100%,.24);
+}
+.add-new-task, .add-new-sub-table{
 	font-size: 14px;
 	line-height: 20px;
 	color: #5e6c84;
 	margin-left: 5px;
 	transition: 0.1s linear;
 }
+.add-new-sub-table{
+	color: #fff;
+}
+.add-new-sub-table:hover{
+	color: #fff;
+}
 .add-new-task:hover{
 	color: #5e6c84;
-	text-decoration: underline;
+}
+.name-task-add, .name-sub-table-add{
+	border: 0;
+	width: 100%;
+	outline: 0;
+}
+.box-add-new-task-action{
+	padding-bottom: 10px;
+}
+.add-task-button, .add-sub-table-button{
+	background-color: #5aac44;
+    box-shadow: none;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    margin: 8px 4px 0 0;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.add-task-cancel{
+	cursor: pointer;
+	padding: 0 5px;
+	display: inline-block;
 }
