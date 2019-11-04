@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css'>
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?=URL_CSS?>/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?=URL_CSS?>/style.css">
 </head>
 <body>
 	<!-- /header -->
@@ -53,7 +53,7 @@
 
 							<div class="main-task-users">
 								<?php if($users) foreach ($users as $key => $user) { ?>
-								<img src="../trello/<?=$user->get_image()?>" alt="<?=$user->get_username()?>" title="<?=$user->get_username()?>">
+								<img src="<?=WEB_DOMAIN?><?=$user->get_image()?>" alt="<?=$user->get_username()?>" title="<?=$user->get_username()?>">
 								<?php } ?>
 							</div>
 						</div>
@@ -68,7 +68,11 @@
 						        </div>
 						        <div class="modal-body">
 						        	<?php if($task->get_image()){?>
+<<<<<<< HEAD
 									<img src="http://localhost:81/trello<?=$task->get_image()?>" alt="" class="fix-image">
+=======
+									<img src="<?=WEB_DOMAIN?><?=$task->get_image()?>" alt="" class="fix-image">
+>>>>>>> 8d764315a232c9cc3623418a679e6a44f6127934
 									<?php } ?>
 						          	<p><?=$task->get_description()?></p>
 						        </div>
@@ -91,9 +95,9 @@
 
 	
 
-	<script src="assets/js/jquery-3.4.1.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery-ui.min.js"></script>
+	<script src="<?=URL_JS?>/jquery-3.4.1.min.js"></script>
+	<script src="<?=URL_JS?>/bootstrap.min.js"></script>
+	<script src="<?=URL_JS?>/jquery-ui.min.js"></script>
 	<script>
 		//drag-drop
 	  	$( function() {
