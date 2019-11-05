@@ -18,15 +18,59 @@
 </head>
 <body>
 	<!-- /header -->
-	<header>
-		<div class="header-left">
-			<a href="#" title=""><i class="fa fa-home" aria-hidden="true"></i></a>
+	<header class="header-table">
+	<div class="header-left">
+		<a href="#" title=""><i class="fa fa-home" aria-hidden="true"></i></a>
+	</div>
+	<div class="header-right">
+		<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
+		<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
+
+		<div class="main-popup popup-profile">
+			<div class="main-popup-head">
+				<span>Bùi Thanh Nam</span>
+			</div>
+			<div class="main-popup-content">
+				<ul>
+					<li><a href="#" title="">Hồ sơ hiển thị</a></li>
+					<li><a href="#" title="">Hoạt động</a></li>
+					<li><a href="#" title="">Cài đăt</a></li>
+					<li><a href="#" title="">Đăng xuất</a></li>
+				</ul>
+			</div>
 		</div>
-		<div class="header-right">
-			<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
-			<a href="#" title="">Bùi Thanh Nam</a>
+		<a href="#" title="" class="newtable"><i class="fa fa-plus" aria-hidden="true"></i></a>
+		<div class="main-popup popup-newtable">
+			<div class="main-popup-head">
+				<span>Tạo bảng</span>
+			</div>
+			<div class="main-popup-content">
+				<ul>
+					<li><a href="#" title="" class="add-table-icon"><i class="fa fa-trello" aria-hidden="true">Tạo bảng...</i> <br> 
+					Một bảng được tạo thành từ các thẻ được sắp xếp trong danh sách. Sử dụng bảng để quản lý các dự án, theo dõi thông tin, hoặc tổ chức bất cứ việc gì.</a></li>
+					<li><a href="#" title=""><i class="fa fa-group" aria-hidden="true">Tạo nhóm...</i> 	<br>
+					Một nhóm là tập hợp các bảng và mọi người. Sử dụng nhóm để tổ chức công ty của bạn, hỗ trợ người bận rộn, gia đình hoặc bạn bè.</a></li>
+					
+				</ul>
+			</div>
 		</div>
-	</header>
+		<div class="main-popup popup-addtable">
+			<div class="main-popup-head">
+				<span>Thêm mới</span>
+			</div>
+			<div class="main-popup-content">
+				<form action="" method="post">
+					<input type="hidden" name="controller" value="tables">
+					<input type="hidden" name="action" value="add_table">
+					<input type="text" name="name" placeholder="Thêm tiêu đề">
+					<input type="hidden" name="image" value="123">
+  					<button  class="btn-add-table" type="submit">Lưu</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</header>
 	<!-- content -->
 	<section class="main-content-home">
 		<div class="container">
@@ -51,5 +95,52 @@
 	</section>
 	<script src="assets/js/jquery-3.4.1.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
+	
+<script>
+	// profile
+	$('.avatar').click(function(){
+		$('.popup-profile').toggle();
+	});
+	$(document).click(function(e){
+		if (! $('.avatar').is(e.target) && $('.avatar').has(e.target).length === 0){
+	        $('.popup-profile').hide();
+	    }
+	})
+	$(document).click(function(e){
+		if (! $('.avatar').is(e.target) && $('.avatar').has(e.target).length === 0){
+	        $('.popup-profile').hide();
+	    }
+	})
+	//newtable
+	$('.btn-add-table').click(function(){
+
+	});
+	$('.add-table-icon').click(function(){
+		$('.popup-addtable').toggle();
+	});
+	$('.newtable').click(function(){
+		$('.popup-newtable').toggle();
+	});
+	$(document).click(function(e){
+		if (! $('.newtable').is(e.target) && $('.newtable').has(e.target).length === 0){
+	        $('.popup-newtable').hide();
+	    }
+	})
+	$(document).click(function(e){
+		if (! $('.newtable').is(e.target) && $('.newtable').has(e.target).length === 0){
+	        $('.popup-newtable').hide();
+	    }
+	})
+	// menu table
+	$('.table-item-menu-icon').click(function(e){
+		$(this).parent().parent().find('.popup-menu-table').toggle();
+	});
+	$(document).click(function(e){
+		if (! $('.table-item-menu-icon').is(e.target) && $('.table-item-menu-icon').has(e.target).length === 0){
+	        $('.popup-menu-table').hide();
+	    }
+	})
+
+</script>
 </body>
 </html>

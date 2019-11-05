@@ -1,6 +1,6 @@
 <?php
 	// database
-	define('HOST',         'localhost');
+	define('HOST',         'localhost:81');
     define('DB_NAME',      'trello');
     define('DB_USER',      'root');
     define('DB_PASSWORD',  '');

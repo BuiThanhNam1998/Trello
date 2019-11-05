@@ -2,7 +2,6 @@
 require_once('config.php');
 require_once('connection.php');
 session_start();
-
 if (isset($_GET['controller'])) {
 	$controller = $_GET['controller'];
 	if (isset($_GET['action'])) {
@@ -23,7 +22,6 @@ else {
   	$controller = 'pages';
   	$action = 'home';
 }
-
 if (!isset($_SESSION['username'])){
 	$controller = 'login';
     $action = 'index';
