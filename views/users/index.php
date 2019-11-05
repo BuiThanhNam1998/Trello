@@ -52,8 +52,8 @@
 					<h3>About</h3>
 					<hr/>
 
-					<form class="form-style">
-
+					<form class="form-style" method="POST" action="?controller=users&action=update_user">
+						<input type="hidden" value="<?=$user['id']?>" name="id">
 						<div class="form-style-info">
 						<div class="title-user-profile">
 						<span>Full Name</span>
@@ -86,7 +86,7 @@
 						<div>
 							<textarea><?=$user['bio']?></textarea>
 						</div>
-						<button class="save-button">Save</button>
+						<button class="save-button" type="submit">Save</button>
 						</div>
 						
 

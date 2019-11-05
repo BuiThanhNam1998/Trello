@@ -49,7 +49,10 @@ class Basic{
 	    $db = DB::getInstance();
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> d519457a6f930ab0e39e3488609311f530acf1a3
 
  	public function get_one_special($special){
 	    if(!$special) return false;
@@ -57,19 +60,18 @@ class Basic{
 	    $cons = 'select * from '.$this->table.' where status != 0 special = '.$special;
 	    $arr = $db->query($cons);
 	    $result = [];
-	    if($arr)
-	{
+	    if($arr){
 	    
-	    foreach ($arr->fetchAll() as $item) {
-	      $result[] = $item;
-	    }
-	    $result = array_shift($result);
-	}
+		    foreach ($arr->fetchAll() as $item) {
+		      $result[] = $item;
+		    }
+		    $result = array_shift($result);
+		}
 	    
 	    return $result;
   	}
 
-  	function updateOne($array) {
+  	function update_one($id, $array) {
   		if (!is_array($array)) 
   			return false;
   		// $oneItem = $this->getCache($key_cache); 
@@ -86,7 +88,6 @@ class Basic{
   			$oneItem[$key] = $val;
   		}
   		$db = DB::getInstance(); 
-  		$res = $db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
-  		die('a');
+  		$db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
   	}
 }

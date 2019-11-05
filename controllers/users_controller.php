@@ -7,13 +7,11 @@ require_once('models/user.php');
 
 class UsersController extends BaseController
 {
-  function __construct()
-  {
+  function __construct(){
     $this->folder = 'users';
   }
 
-  public function index()
-  {
+  public function index(){
     $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : '';
     if($user_id){
     	$cls_user = new User();
@@ -36,5 +34,16 @@ class UsersController extends BaseController
       $this->render('error');
     }
   }
+
+  public function update_user(){
+    $cls_user = new User();
+    $id = $_POST['id'];
+    unset($_POST['id']);
+    $cls_user->update_one($id, $_POST);
+    header("location:javascript://history.go(-1)");
+    
+  }
+
+
 }
  ?>
