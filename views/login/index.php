@@ -12,7 +12,6 @@ if (isset($_POST["btn_login"])){
         $_SESSION['username'] = $username;
         $_SESSION['userid'] = $result[0];
         print_r($_SESSION);
-        die();
         header('Location: index.php?controller=tables');
     }
 }
@@ -88,6 +87,8 @@ if (isset($_POST["btn_login"])){
                         minlength:9,
                     }
                 },
+
+                //loi tuong ung voi moi rule
                 messages:{
                    
                     username:{

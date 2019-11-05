@@ -12,7 +12,7 @@ class UsersController extends BaseController
   }
 
   public function index(){
-    $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : '';
+    $user_id = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
     if($user_id){
     	$cls_user = new User();
     	$user = $cls_user->get_one($user_id);
