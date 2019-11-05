@@ -1,10 +1,15 @@
 <?php
 $controllers = array(
   'pages' => ['home', 'error'],
+<<<<<<< HEAD
   'tables' => ['index', 'add_table'],
+=======
+  'login' => ['index'],
+  'tables' => ['index'],
+>>>>>>> 237b5e75bb08e583042402de40c961d54cfbdf52
   'sub_tables' => ['index', 'add_sub_table'],
   'tasks' => ['index', 'set_sub_table', 'add_task'],
-  'users' => ['index'],
+  'users' => ['index','update_user'],
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi
@@ -13,6 +18,8 @@ if (!array_key_exists($controller, $controllers) || !in_array($action, $controll
   $controller = 'pages';
   $action = 'error';
 }
+
+// Kiểm tra xem đã đăng nhập chưa, nêu chưa thì trở lại page login
 
 // Nhúng file định nghĩa controller vào để có thể dùng được class định nghĩa trong file đó
 include_once('controllers/' . $controller . '_controller.php');

@@ -9,7 +9,7 @@
 
 		<div class="main-popup popup-profile">
 			<div class="main-popup-head">
-				<span>Bùi Thanh Nam</span>
+				<span>Bùi Thanh Nam</span>
 			</div>
 			<div class="main-popup-content">
 				<ul>
