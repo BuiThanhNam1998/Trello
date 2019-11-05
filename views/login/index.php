@@ -11,8 +11,6 @@ if (isset($_POST["btn_login"])){
     if ($result){
         $_SESSION['username'] = $username;
         $_SESSION['userid'] = $result[0];
-        print_r($_SESSION);
-        die();
         header('Location: index.php?controller=tables');
     }
 }
@@ -40,10 +38,6 @@ if (isset($_POST["btn_login"])){
         </form>
     </div>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".login-form").validate({

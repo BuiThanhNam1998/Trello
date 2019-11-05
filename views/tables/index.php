@@ -59,7 +59,9 @@
 				<span>Thêm mới</span>
 			</div>
 			<div class="main-popup-content">
-				<form action="?controller=tables&action=add_table">
+				<form action="" method="post">
+					<input type="hidden" name="controller" value="tables">
+					<input type="hidden" name="action" value="add_table">
 					<input type="text" name="name" placeholder="Thêm tiêu đề">
 					<input type="hidden" name="image" value="123">
   					<button  class="btn-add-table" type="submit">Lưu</button>
