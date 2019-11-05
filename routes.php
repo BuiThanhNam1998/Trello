@@ -1,12 +1,9 @@
 <?php
 $controllers = array(
   'pages' => ['home', 'error'],
-<<<<<<< HEAD
   'tables' => ['index', 'add_table'],
-=======
   'login' => ['index'],
   'tables' => ['index'],
->>>>>>> 237b5e75bb08e583042402de40c961d54cfbdf52
   'sub_tables' => ['index', 'add_sub_table'],
   'tasks' => ['index', 'set_sub_table', 'add_task'],
   'users' => ['index','update_user'],

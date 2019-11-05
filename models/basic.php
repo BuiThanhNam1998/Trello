@@ -1,25 +1,15 @@
 <?php 
 class Basic{
 	// private $table;
-<<<<<<< HEAD
-	public function get_all($cons = ''){
-=======
 	public function get_all($cons = ' where status != 0 '){
->>>>>>> 237b5e75bb08e583042402de40c961d54cfbdf52
 	    $list = [];
 	    $db = DB::getInstance();
 	    $req = $db->query('select * from ' . $this->table . $cons);
 
 	    if($req){
-<<<<<<< HEAD
-	      foreach ($req->fetchAll() as $item) {
-	        $list[] = $item;
-	      }
-=======
 	      	foreach ($req->fetchAll() as $item) {
         		$list[] = $item;
 	      	}
->>>>>>> 237b5e75bb08e583042402de40c961d54cfbdf52
 	    }
 	    else{
 	      die('Error!');
