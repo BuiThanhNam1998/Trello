@@ -13,10 +13,11 @@ class User extends Basic{
 	    foreach ($arr->fetchAll() as $item){
 	    	$result[]=$item;
 	    }
+	    $result = array_shift($result);
 	    if(empty($result)){
 	    	return false;
 	    }
-	    return true;
+	    return $result;
     }
 }
 ?>

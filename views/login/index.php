@@ -8,8 +8,11 @@ if (isset($_POST["btn_login"])){
     $password = $_POST["password"];
     $inputUserData = new user;
     $result = $inputUserData->trackUserLogin($username, $password);
-    if ($result==true){
+    if ($result){
         $_SESSION['username'] = $username;
+        $_SESSION['userid'] = $result[0];
+        print_r($_SESSION);
+        die();
         header('Location: index.php?controller=tables');
     }
 }

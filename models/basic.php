@@ -49,10 +49,6 @@ class Basic{
 	    $db = DB::getInstance();
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> d519457a6f930ab0e39e3488609311f530acf1a3
 
  	public function get_one_special($special){
 	    if(!$special) return false;
