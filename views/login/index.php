@@ -10,8 +10,6 @@ if (isset($_POST["btn_login"])){
     $result = $inputUserData->trackUserLogin($username, $password);
     if ($result==true){
         $_SESSION['username'] = $username;
-
-        //Test điều hướng
         header('Location: index.php?controller=tables');
     }
 }

@@ -12,7 +12,6 @@ class User extends Basic{
 	    $result = [];
 	    foreach ($arr->fetchAll() as $item){
 	    	$result[]=$item;
-	    	print_r($item);
 	    }
 	    if(empty($result)){
 	    	return false;
