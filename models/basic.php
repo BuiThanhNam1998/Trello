@@ -1,14 +1,14 @@
 <?php 
 class Basic{
 	// private $table;
-	static function get_all($cons = ''){
+	public function get_all($cons = ''){
 	    $list = [];
 	    $db = DB::getInstance();
 	    $req = $db->query('select * from ' . $this->table . $cons);
 
 	    if($req){
 	      foreach ($req->fetchAll() as $item) {
-	        $list[] = new $item;
+	        $list[] = $item;
 	      }
 	    }
 	    else{

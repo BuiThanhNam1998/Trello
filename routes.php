@@ -1,6 +1,7 @@
 <?php
 $controllers = array(
   'pages' => ['home', 'error'],
+  'login' => ['index'],
   'tables' => ['index'],
   'sub_tables' => ['index', 'add_sub_table'],
   'tasks' => ['index', 'set_sub_table', 'add_task'],
@@ -13,6 +14,8 @@ if (!array_key_exists($controller, $controllers) || !in_array($action, $controll
   $controller = 'pages';
   $action = 'error';
 }
+
+// Kiểm tra xem đã đăng nhập chưa, nêu chưa thì trở lại page login
 
 // Nhúng file định nghĩa controller vào để có thể dùng được class định nghĩa trong file đó
 include_once('controllers/' . $controller . '_controller.php');

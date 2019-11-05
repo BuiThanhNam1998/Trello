@@ -1,14 +1,27 @@
+<?php
+include_once('models\user.php');
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_POST["btn_login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $inputUserData = new user;
+    $result = $inputUserData->trackUserLogin($username, $password);
+    if ($result==true){
+        $_SESSION['username'] = $username;
+
+        //Test điều hướng
+        header('Location: index.php?controller=tables');
+    }
+}
+
+?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Đăng nhập</title>
-	<meta charset="UTF-8">
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    
-</head>
-<body>
+<html>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="layouts/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="layouts/css/login.css">
     <div class="login-page">
     <div class="form-login">
         <form class="register-form">
@@ -18,16 +31,16 @@
             <button>Đăng ký</button>
             <p class="message">Bạn đã sẵn sàng Đăng nhập? <a href="#">Đăng nhập</a></p>
         </form>
-        <form class="login-form">
+        <form class="login-form" method="POST">
             <input name="username" type="text" placeholder="User name" required>
             <input name="password" type="password" placeholder="Password" required>
-            <button>đăng nhập</button>
+            <button name="btn_login" type="submit">đăng nhập</button>
             <p class="message">Bạn chưa có tài khoản? <a href="#">Đăng ký</a></p>
         </form>
     </div>
     </div>
     <script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script>
@@ -97,6 +110,4 @@
             });
         });
     </script>
-  
-</body>
-</html>
+<?php?>
