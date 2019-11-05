@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
   'pages' => ['home', 'error'],
-  'tables' => ['index'],
+  'tables' => ['index', 'add_table'],
   'sub_tables' => ['index', 'add_sub_table'],
   'tasks' => ['index', 'set_sub_table', 'add_task'],
   'users' => ['index'],

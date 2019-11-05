@@ -11,8 +11,15 @@ class TablesController extends BaseController
 
   public function index()
   {
-    $tables = Table::get_all();
+    $cls_table = new Table();
+    $tables = $cls_table->get_all();
     $data = array('tables' => $tables);
     $this->render('index', $data);
+  }
+  public function add_table()
+  {
+    $arr = $_POST;
+    $cls_table = new Table();
+    $cls_table->insert_one($arr);
   }
 }
