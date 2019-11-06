@@ -13,4 +13,5 @@
 	define('URL_CSS', 		WEB_DOMAIN.'/'.DIR_THEMES.'/css');
 	define('URL_JS', 		WEB_DOMAIN.'/'.DIR_THEMES.'/js');
 	define('URL_DEFAULT_IMAGE', WEB_DOMAIN.'/'.DIR_THEMES.'/images/default.jpg');
+	define('URL_DEFAULT_TABLE_IMAGE', DIR_THEMES.'/images/default_table.png');
 ?>

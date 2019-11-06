@@ -6,6 +6,15 @@
 //   </li>';
 // }
 // echo '</ul>';
+require_once('models\table.php');
+    if (isset($_POST['name'])){
+		$tbl = new Table();
+		$name = $_POST['name'];
+		$image = URL_DEFAULT_TABLE_IMAGE;
+		$inputTbl = ['name'=> $name, 'status'=> 1, 'image' => $image, 'user_id' => $_SESSION['userid']];
+		$tbl->insert_one($inputTbl);
+		Header( "Location: index.php?controller=tables" );
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +73,7 @@
 					<input type="hidden" name="action" value="add_table">
 					<input type="text" name="name" placeholder="Thêm tiêu đề">
 					<input type="hidden" name="image" value="123">
-  					<button  class="btn-add-table" type="submit">Lưu</button>
+  					<button class="btn-add-table" type="submit">Lưu</button>
 				</form>
 			</div>
 		</div>
@@ -113,7 +122,6 @@
 	})
 	//newtable
 	$('.btn-add-table').click(function(){
-
 	});
 	$('.add-table-icon').click(function(){
 		$('.popup-addtable').toggle();
