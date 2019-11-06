@@ -11,8 +11,9 @@ class TablesController extends BaseController
 
   public function index()
   {
+    $uid = $_SESSION['userid'];
     $cls_table = new Table();
-    $tables = $cls_table->get_all();
+    $tables = $cls_table->get_by_user_id($uid);
     $data = array('tables' => $tables);
     $this->render('index', $data);
   }

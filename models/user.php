@@ -19,5 +19,33 @@ class User extends Basic{
 	    }
 	    return $result;
     }
+  public function is_name_duplicate($value){
+  		if (!$value) return false;
+  		$db = DB::getInstance();
+  		$arr = $db->query('select * from '.$this->table.' where username = "'.$value.'"');
+  		$result = [];
+	    foreach ($arr->fetchAll() as $item){
+	    	$result[]=$item;
+	    }
+	    $result = array_shift($result);
+	    if(!empty($result)){
+	    	return true;
+	    }
+	    return false;
+  	}
+  public function is_email_duplicate($value){
+  		if (!$value) return false;
+  		$db = DB::getInstance();
+  		$arr = $db->query('select * from '.$this->table.' where email = "'.$value.'"');
+  		$result = [];
+	    foreach ($arr->fetchAll() as $item){
+	    	$result[]=$item;
+	    }
+	    $result = array_shift($result);
+	    if(!empty($result)){
+	    	return true;
+	    }
+	    return false;
+  	}
 }
 ?>

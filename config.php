@@ -6,10 +6,11 @@
     define('DB_PASSWORD',  '');
     //domain
     define('DOMAIN',       'trello');
-	define('WEB_DOMAIN',   'http://localhost:81/'.DOMAIN);
+	define('WEB_DOMAIN',   'http://localhost/'.DOMAIN);
 	// ASSET
 	define('DIR_THEMES',   'assets');
 	define('URL_IMAGES', 	WEB_DOMAIN.'/'.DIR_THEMES.'/images');
 	define('URL_CSS', 		WEB_DOMAIN.'/'.DIR_THEMES.'/css');
 	define('URL_JS', 		WEB_DOMAIN.'/'.DIR_THEMES.'/js');
+	define('URL_DEFAULT_IMAGE', WEB_DOMAIN.'/'.DIR_THEMES.'/images/default.jpg');
 ?>

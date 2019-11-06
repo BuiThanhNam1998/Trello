@@ -22,9 +22,9 @@ else {
   	$controller = 'pages';
   	$action = 'home';
 }
-if (!isset($_SESSION['username'])){
-	$controller = 'login';
-    $action = 'index';
+
+if ($controller!='login' && !isset($_SESSION['username'])){
+	header('Location: index.php?controller=login');
 }
 
 require_once('routes.php');

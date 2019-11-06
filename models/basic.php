@@ -41,7 +41,7 @@ class Basic{
 	      $field = '';
 	      $value = '';
 	      foreach($array as $key=>$val) {
-	        if(!$field) $field=$key;
+	        if(!$field) $field.=' '.$key;
 	        else $field.=','.$key;
 	        if(!$value) $value='"'.addslashes($val).'"';
 	        else $value.=',"'.addslashes($val).'"';
