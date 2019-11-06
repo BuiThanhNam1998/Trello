@@ -1,35 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Đăng nhập</title>
-	<meta charset="UTF-8">
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+<?php
+require_once('models\user.php');
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_POST["btn_login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $inputUser = new User();
+    $result = $inputUser->trackUserLogin($username, $password);
+    if ($result){
+        $_SESSION['username'] = $username;
+        $_SESSION['userid'] = $result[0];
+        header('Location: index.php?controller=tables');
+    }
+}
+
+if (isset($_POST["btn_register"])){
+    $inputUser = new User();
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $image = URL_DEFAULT_IMAGE;
+    $status = 1;
+    $mess = 'success';
+
+    if($inputUser->is_name_duplicate($username))
+        $mess = 'warning';
+    if($inputUser->is_email_duplicate($email))
+        $mess = 'warning';
+
+    if($mess == 'success'){
+        $reg_info = ['username'=>$username, 'password'=>$password, 'email'=>$email, 'image'=>$image, 'status'=>$status];
+        $inputUser->insert_one($reg_info);
+    }
     
-</head>
-<body>
+    header('Location: index.php?controller=login&message='.$mess);
+}
+
+?>
+<!DOCTYPE html>
+<html>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" type="text/css" href="layouts/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="layouts/css/login.css">
     <div class="login-page">
     <div class="form-login">
-        <form class="register-form">
+        <form class="register-form" method="POST">
             <input name="username" type="text" placeholder="User name" required>
             <input name="password" type="text" placeholder="Password" required>
             <input name="email" type="text" placeholder="Địa chỉ Email" required>
-            <button>Đăng ký</button>
+            <button name="btn_register" type="submit">Đăng ký</button>
             <p class="message">Bạn đã sẵn sàng Đăng nhập? <a href="#">Đăng nhập</a></p>
         </form>
-        <form class="login-form">
+        <form class="login-form" method="POST">
             <input name="username" type="text" placeholder="User name" required>
             <input name="password" type="password" placeholder="Password" required>
-            <button>đăng nhập</button>
+            <button name="btn_login" type="submit">đăng nhập</button>
             <p class="message">Bạn chưa có tài khoản? <a href="#">Đăng ký</a></p>
         </form>
     </div>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".login-form").validate({
@@ -63,6 +94,22 @@
                     username:{
                         required: true,
                         minlength:5,
+                        // remote:{
+                        //     url: 'duplicateChecker.php',
+                        //     dataType: 'post',
+                        //     data: {
+                        //         'username': $('#username').val()
+                        //         'elem': 
+                        //     },
+                        //     success: function(data) {
+                        //         if (data.username == 'found')
+                        //         {
+                        //         message: {
+                        //                 username: 'The username is already in use!'
+                        //             }
+                        //         }
+                        //     }
+                        // }
                     },
                     password:{
     
@@ -74,6 +121,8 @@
                         minlength:9,
                     }
                 },
+
+                //loi tuong ung voi moi rule
                 messages:{
                    
                     username:{
@@ -97,6 +146,3 @@
             });
         });
     </script>
-  
-</body>
-</html>

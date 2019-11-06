@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 require_once('connection.php');
+session_start();
 if (isset($_GET['controller'])) {
 	$controller = $_GET['controller'];
 	if (isset($_GET['action'])) {
@@ -21,4 +22,9 @@ else {
   	$controller = 'pages';
   	$action = 'home';
 }
+
+if ($controller!='login' && !isset($_SESSION['username'])){
+	header('Location: index.php?controller=login');
+}
+
 require_once('routes.php');

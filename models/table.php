@@ -7,6 +7,21 @@ class Table extends Basic{
     $this->table = 'tables';
   }
 
+  public function get_by_user_id($uid){
+    if(!$uid) return false;
+    else{
+      $cons = 'select * from '.$this->table.' where status!=0 and user_id = '.$uid;
+      $db = DB::getInstance();
+      $req = $db->query($cons);
+      if($req){
+        foreach ($req->fetchAll() as $item) {
+          $list[] = $item;
+        }
+        return $list;
+      }
+    return false;
+    }
+  }
 
   public function get_tasks($id){
     $list = [];

@@ -12,6 +12,7 @@
 	<script src="<?=URL_JS?>/jquery-3.4.1.min.js"></script>
 	<script src="<?=URL_JS?>/bootstrap.min.js"></script>
 	<script src="<?=URL_JS?>/jquery-ui.min.js"></script>
+	<script src="<?=URL_JS?>/jquery.validate.min.js"></script>
   </head>
   <body>
     <?= @$content ?>

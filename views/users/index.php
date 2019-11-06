@@ -52,15 +52,15 @@
 					<h3>About</h3>
 					<hr/>
 
-					<form class="form-style">
-
+					<form class="form-style" method="POST" action="?controller=users&action=update_user">
+						<input type="hidden" value="<?=$user['id']?>" name="id">
 						<div class="form-style-info">
 						<div class="title-user-profile">
 						<span>Full Name</span>
 						<span><i class="fa fa-globe" aria-hidden="true" ></i> Always Public</span>
 						</div>
 						<div>
-							<input type="text" name="fullname" class="text-field" value="<?=$user['fullname']?>">
+							<input type="text" name="fullname" id="fullname" class="text-field" value="<?=$user['fullname']?>">
 						</div>
 
 						<div class="title-user-profile">
@@ -86,7 +86,7 @@
 						<div>
 							<textarea><?=$user['bio']?></textarea>
 						</div>
-						<button class="save-button">Save</button>
+						<button class="save-button" type="submit">Save</button>
 						</div>
 						
 
@@ -111,6 +111,9 @@
 		</div>
 				</div>
 
+				
+
+
 				<div id="2" class="tab-pane container">
 					<h2> A@###########</h2>
 					<p>skafjlasfffffffkasfjklasfljkasfjlkasljkfasjlkfsajlkflasjkfjlkasfjlk</p>
@@ -134,7 +137,66 @@
 			</div>
 		<!--Main Content-->
 </div>	
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+	<!-- <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script> -->
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			$(".form-style").validate({
+				
+			rule: {
+				//fullname tu 6- 20 ki tu
+				fullname:
+				{
+					required : true,
+					minlength: 6,
+					maxlength: 50
+				},
+
+				//address khong duoc de trong
+				address:
+				{
+						required : true
+				},
+
+				username:
+				{
+					required : true,
+					minlength: 6,
+					maxlength: 20
+				},
+
+				
+
+
+			message: {
+					fullname:
+						{
+							required : "You must type Full name",
+							minlength: "Your fullname must be more than 6",
+							maxlength: "Your fullname must be less than 50",
+							
+						},
+					
+					address:
+						{
+							required : "You must type Address"
+						},	
+
+					
+					username:
+						{
+							required : "You must type User name",
+							minlength: "Your username must be more than 6",
+							maxlength: "Your username must be less than 20"
+							
+						},
+
+				}
+			}
+			});
+		});
+	</script>
 </body>
 </html>

@@ -131,12 +131,12 @@ header a:hover{
 }
 .banner li 
 {
+	border: 0px solid;
 	color: grey;
 	display: inline;	
 	justify-content: center;
 	background-color: #fff;
 	margin-right: 10px;
-	padding: 5px 15px;
 	border-radius: 3px 3px 0 0;
 
 }

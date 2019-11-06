@@ -41,7 +41,7 @@ class Basic{
 	      $field = '';
 	      $value = '';
 	      foreach($array as $key=>$val) {
-	        if(!$field) $field=$key;
+	        if(!$field) $field.=' '.$key;
 	        else $field.=','.$key;
 	        if(!$value) $value='"'.addslashes($val).'"';
 	        else $value.=',"'.addslashes($val).'"';
@@ -57,19 +57,19 @@ class Basic{
 	    $cons = 'select * from '.$this->table.' where status != 0 special = '.$special;
 	    $arr = $db->query($cons);
 	    $result = [];
-	    if($arr)
-	{
+	    if($arr){
 	    
-	    foreach ($arr->fetchAll() as $item) {
-	      $result[] = $item;
-	    }
-	    $result = array_shift($result);
-	}
+		    foreach ($arr->fetchAll() as $item) {
+		      $result[] = $item;
+		    }
+		    $result = array_shift($result);
+		}
 	    
 	    return $result;
   	}
 
-  	function update_one($array) {
+
+  	function update_one($id, $array) {
   		if (!is_array($array)) 
   			return false;
   		$oneItem = array();
@@ -81,7 +81,6 @@ class Basic{
   		}
   		$db = DB::getInstance(); 
   		$db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
-  		die('a');
   	}
   	function delete_one($id){
   		if(!$id){
