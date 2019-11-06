@@ -52,5 +52,13 @@ class SubTablesController extends BaseController
       </div>';
     }
   }
+
+  public function delete_sub_table(){
+    $cls_sub_table = new SubTable();
+    $sub_table_id = isset($_POST['sub_table_id']) ? $_POST['sub_table_id'] : '';
+    if($sub_table_id){
+      $cls_sub_table->delete_one($sub_table_id);
+    }
+  }
 }
 

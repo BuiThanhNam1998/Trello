@@ -2,7 +2,7 @@
 $controllers = array(
   'pages' => ['home', 'error'],
   'tables' => ['index'],
-  'sub_tables' => ['index', 'add_sub_table'],
+  'sub_tables' => ['index', 'add_sub_table', 'delete_sub_table'],
   'tasks' => ['index', 'set_sub_table', 'add_task'],
   'users' => ['index'],
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.

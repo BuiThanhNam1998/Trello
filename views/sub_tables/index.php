@@ -8,11 +8,7 @@
 		<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
 		<div class="main-popup popup-profile">
 			<div class="main-popup-head">
-<<<<<<< HEAD
 				<span>Bùi Thanh Nam 1998</span>
-=======
-				<span>Bùi Thanh Nam</span>
->>>>>>> 8d8aaa502fc41dba41bc17ffebb1c7ead51e70da
 			</div>
 			<div class="main-popup-content">
 				<ul>
@@ -34,7 +30,7 @@
 	<section class="main-content-table">
 		<!-- danh sach cac sub table -->
 		<?php foreach($sub_tables as $key => $sub_table){ ?>
-		<div class="main-table-item">
+		<div class="main-table-item" data-id="<?=$sub_table['id']?>">
 			<div class="main-table-item-title">
 				<span><?=$sub_table['name']?></span>
 				<a href="javascript:void(0)" class="table-item-menu-icon"><span class="ti-more-alt"></span></a>
@@ -46,7 +42,7 @@
 					<div class="main-popup-content">
 						<ul>
 							<li><a href="#" title="">Thêm thẻ</a></li>
-							<li><a href="#" title="">Lưu trữ danh sách này</a></li>
+							<li><a href="javascript:void(0)" class="delete-sub-table" data-id="<?=$sub_table['id']?>">Lưu trữ danh sách này</a></li>
 						</ul>
 					</div>
 				</div>
@@ -172,7 +168,7 @@
   		$(this).parents('.main-table-item').find('.box-add-new-task-content').css('display', 'none');
   		$(this).parent().css('display', 'none');
   	});
-  	//ad news sub_table
+  	//add news sub_table
   	$(document).on('click', '.add-new-sub-table', function(){
   	// $('.add-new-sub-table').click(function(){
   		$(this).parents('.main-table-item').append(
@@ -212,6 +208,18 @@
 		  				<span class="ti-close add-task-cancel"></span>\
 		  			</div></div?'
 		    	)
+		});
+  	});
+  	//delete subtable
+  	$(document).on('click' ,'.delete-sub-table', function(){
+  		var sub_table_id = $(this).data('id');
+  		$.ajax({
+        	url: "<?=WEB_DOMAIN?>/index.php?controller=sub_tables&action=delete_sub_table",
+        	method: 'post',
+        	data: {'sub_table_id': sub_table_id},
+        	context: $('.main-table-item[data-id =' + sub_table_id + ']'),
+        }).done(function(data) {
+        	$(this).remove();
 		});
   	});
 </script>

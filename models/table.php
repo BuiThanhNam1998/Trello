@@ -24,7 +24,7 @@ class Table extends Basic{
 
   public function get_sub_tables($id){
     $list = [];
-    $cons = 'select * from sub_tables where table_id = ' . $id;
+    $cons = 'select * from sub_tables where status > 0 and table_id = ' . $id;
     $db = DB::getInstance();
     $req = $db->query($cons);
     if($req){

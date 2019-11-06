@@ -1,7 +1,7 @@
 <?php 
 class Basic{
 	// private $table;
-	public function get_all($cons = ''){
+	public function get_all($cons = ' where status != 0 '){
 	    $list = [];
 	    $db = DB::getInstance();
 	    $req = $db->query('select * from ' . $this->table . $cons);
@@ -20,7 +20,7 @@ class Basic{
   	public function get_one($id){
 	    if(!$id) return false;
 	    $db = DB::getInstance(); 
-	    $cons = 'select * from '. $this->table. ' where id = ' . $id .' limit 1';
+	    $cons = 'select * from '. $this->table. ' where status != 0 and id = ' . $id .' limit 1';
 	    $arr = $db->query($cons);
 	    if($arr){
 	    	$result = [];
@@ -49,15 +49,12 @@ class Basic{
 	    $db = DB::getInstance();
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
-<<<<<<< HEAD
-=======
 	
->>>>>>> 8d8aaa502fc41dba41bc17ffebb1c7ead51e70da
 
  	public function get_one_special($special){
 	    if(!$special) return false;
 	    $db = DB::getInstance(); 
-	    $cons = 'select * from '.$this->table.' where special = '.$special;
+	    $cons = 'select * from '.$this->table.' where status != 0 special = '.$special;
 	    $arr = $db->query($cons);
 	    $result = [];
 	    if($arr)
@@ -72,15 +69,9 @@ class Basic{
 	    return $result;
   	}
 
-  	function updateOne($array) {
+  	function update_one($array) {
   		if (!is_array($array)) 
   			return false;
-  		// $oneItem = $this->getCache($key_cache); 
-  		// $exists_cache = false; 
-  		// if($oneItem) { 
-  		// 	$exists_cache = true; 
-  		// 	if($oneItem=='null') $oneItem = array();
-  		// } 
   		$oneItem = array();
   		$value=''; 
   		if ($array)foreach($array as $key => $val) {
@@ -89,7 +80,16 @@ class Basic{
   			$oneItem[$key] = $val;
   		}
   		$db = DB::getInstance(); 
-  		$res = $db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
+  		$db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
   		die('a');
+  	}
+  	function delete_one($id){
+  		if(!$id){
+  			return false;
+  			die(':(');
+  		}
+  		$cons = ('UPDATE '.$this->table.' SET status = 0 WHERE id = '.$id);
+  		$db = DB::getInstance(); 
+  		$db->query($cons);
   	}
 }
