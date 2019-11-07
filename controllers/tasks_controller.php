@@ -47,7 +47,6 @@ class TasksController extends BaseController
     $arr['special'] = $special;
     $cls_task = new Task();
     $cls_task->insert_one($arr);
-
     $task = $cls_task->get_one_special($special);
     $users = $cls_task->get_users($task['id']);
     if($task){

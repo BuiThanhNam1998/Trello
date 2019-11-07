@@ -114,7 +114,8 @@
     	});
   	});
   	//add task
-  	$('.add-new-task').click(function(){
+  	$(document).on('click', '.add-new-task', function(){
+  	// $('.add-new-task').click(function(){
   		$(this).parents('.main-table-item').append(
   			'<div class="main-task box-add-new-task-content">\
   				<textarea name="name" row="2" class="name-task-add" placeholder="Nhập tiêu đề cho thẻ này"></textarea>\

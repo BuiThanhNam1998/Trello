@@ -54,7 +54,7 @@ class Basic{
  	public function get_one_special($special){
 	    if(!$special) return false;
 	    $db = DB::getInstance(); 
-	    $cons = 'select * from '.$this->table.' where status != 0 special = '.$special;
+	    $cons = 'select * from '.$this->table.' where status != 0 and special = '.$special;
 	    $arr = $db->query($cons);
 	    $result = [];
 	    if($arr){
