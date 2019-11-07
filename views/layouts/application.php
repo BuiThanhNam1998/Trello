@@ -72,4 +72,5 @@
 <?php } ?>
     <?= @$content ?>
   </body>
+  <script src="<?=URL_JS?>/main.js"></script>
 </html>
