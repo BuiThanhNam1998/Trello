@@ -31,7 +31,7 @@
 				</div>
 				<div class="main-popup-content">
 					<ul>
-						<li><a href="#" title="">Hồ sơ hiển thị</a></li>
+						<li><a id="btn-profile" href="#" title="">Hồ sơ hiển thị</a></li>
 						<li><a href="#" title="">Hoạt động</a></li>
 						<li><a href="#" title="">Cài đăt</a></li>
 						<li><a id="btn-log-out" href="#" title="">Đăng xuất</a></li>
