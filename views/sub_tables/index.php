@@ -1,47 +1,4 @@
 <!-- /header -->
-<header class="header-table">
-	<div class="header-left">
-		<a href="#" title=""><i class="fa fa-home" aria-hidden="true"></i></a>
-	</div>
-	<div class="header-right">
-		<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
-		<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
-
-		<div class="main-popup popup-profile">
-			<div class="main-popup-head">
-<<<<<<< HEAD
-				<span>Bùi Thanh Nam 1998</span>
-=======
-				<span>Bùi Thanh Nam</span>
->>>>>>> b3a95d77af4488816ce7dfe2b6002fb2ef165251
-			</div>
-			<div class="main-popup-content">
-				<ul>
-					<li><a href="#" title="">Hồ sơ hiển thị</a></li>
-					<li><a href="#" title="">Hoạt động</a></li>
-					<li><a href="#" title="">Cài đăt</a></li>
-					<li><a href="#" title="">Đăng xuất</a></li>
-				</ul>
-			</div>
-		</div>
-		<a href="#" title="" class="newtable"><i class="fa fa-plus" aria-hidden="true"></i></a>
-		<div class="main-popup popup-newtable">
-			<div class="main-popup-head">
-				<span>Tạo bảng</span>
-			</div>
-			<div class="main-popup-content">
-				<ul>
-					<li><a href="#" title=""><i class="fa fa-trello" aria-hidden="true">Tạo bảng...</i> <br> 
-					Một bảng được tạo thành từ các thẻ được sắp xếp trong danh sách. Sử dụng bảng để quản lý các dự án, theo dõi thông tin, hoặc tổ chức bất cứ việc gì.</a></li>
-					<li><a href="#" title=""><i class="fa fa-group" aria-hidden="true">Tạo nhóm...</i> 	<br>
-					Một nhóm là tập hợp các bảng và mọi người. Sử dụng nhóm để tổ chức công ty của bạn, hỗ trợ người bận rộn, gia đình hoặc bạn bè.</a></li>
-					
-				</ul>
-			</div>
-		</div>
-
-	</div>
-</header>
 <section class="main-wrap">
 	<!-- breadcrumb -->
 	<section class="table-breadcrumb">

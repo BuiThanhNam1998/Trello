@@ -16,70 +16,7 @@ require_once('models\table.php');
 		Header( "Location: index.php?controller=tables" );
     }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Quản lý công việc</title>
-	<meta charset="UTF-8">
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
 <body>
-	<!-- /header -->
-	<header class="header-table">
-	<div class="header-left">
-		<a href="#" title=""><i class="fa fa-home" aria-hidden="true"></i></a>
-	</div>
-	<div class="header-right">
-		<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
-		<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
-
-		<div class="main-popup popup-profile">
-			<div class="main-popup-head">
-				<span>Bùi Thanh Nam</span>
-			</div>
-			<div class="main-popup-content">
-				<ul>
-					<li><a href="#" title="">Hồ sơ hiển thị</a></li>
-					<li><a href="#" title="">Hoạt động</a></li>
-					<li><a href="#" title="">Cài đăt</a></li>
-					<li><a href="#" title="">Đăng xuất</a></li>
-				</ul>
-			</div>
-		</div>
-		<a href="#" title="" class="newtable"><i class="fa fa-plus" aria-hidden="true"></i></a>
-		<div class="main-popup popup-newtable">
-			<div class="main-popup-head">
-				<span>Tạo bảng</span>
-			</div>
-			<div class="main-popup-content">
-				<ul>
-					<li><a href="#" title="" class="add-table-icon"><i class="fa fa-trello" aria-hidden="true">Tạo bảng...</i> <br> 
-					Một bảng được tạo thành từ các thẻ được sắp xếp trong danh sách. Sử dụng bảng để quản lý các dự án, theo dõi thông tin, hoặc tổ chức bất cứ việc gì.</a></li>
-					<li><a href="#" title=""><i class="fa fa-group" aria-hidden="true">Tạo nhóm...</i> 	<br>
-					Một nhóm là tập hợp các bảng và mọi người. Sử dụng nhóm để tổ chức công ty của bạn, hỗ trợ người bận rộn, gia đình hoặc bạn bè.</a></li>
-					
-				</ul>
-			</div>
-		</div>
-		<div class="main-popup popup-addtable">
-			<div class="main-popup-head">
-				<span>Thêm mới</span>
-			</div>
-			<div class="main-popup-content">
-				<form action="" method="post">
-					<input type="hidden" name="controller" value="tables">
-					<input type="hidden" name="action" value="add_table">
-					<input type="text" name="name" placeholder="Thêm tiêu đề">
-					<input type="hidden" name="image" value="123">
-  					<button class="btn-add-table" type="submit">Lưu</button>
-				</form>
-			</div>
-		</div>
-
-	</div>
-</header>
 	<!-- content -->
 	<section class="main-content-home">
 		<div class="container">
@@ -92,7 +29,7 @@ require_once('models\table.php');
 				<?php foreach($tables as $key => $table){ ?>
 				<div class="col-lg-3">
 					<div class="table-item">
-						<a href="#" title="" class="thumb">
+						<a href="?controller=sub_tables&table_id=<?=$table['id']?>" title="" class="thumb">
 							<img src="<?=$table['image']?>" alt="" class="fix-image">
 						</a>
 						<a href="#" title="" class="table-item-title"><?=$table['name']?></a>
@@ -150,5 +87,3 @@ require_once('models\table.php');
 	})
 
 </script>
-</body>
-</html>

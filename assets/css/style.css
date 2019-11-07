@@ -102,7 +102,7 @@ header a.avatar img{
 }
 /*CONTENT*/
 .main-content-home{
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
 .main-content-home-title{
 	font-size: 22px;
@@ -135,6 +135,7 @@ header a.avatar img{
 }
 .table-item img{
 	border-radius: 8px;
+	height: 100%;
 }
 /*TABLE*/
 .main-wrap{
