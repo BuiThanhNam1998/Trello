@@ -1,4 +1,6 @@
-
+$('.fa-home').click(function(){
+	window.location.replace("index.php?controller=tables");
+});
 
 // profile dropdown
 $('.avatar').click(function(){
