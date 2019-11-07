@@ -44,6 +44,12 @@ if (isset($_POST["btn_register"])){
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" type="text/css" href="layouts/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="layouts/css/login.css">
+    <link rel="stylesheet" type="text/css" href="<?=URL_CSS?>/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=URL_CSS?>/style.css">
+    <script src="<?=URL_JS?>/jquery-3.4.1.min.js"></script>
+    <script src="<?=URL_JS?>/bootstrap.min.js"></script>
+    <script src="<?=URL_JS?>/jquery-ui.min.js"></script>
+    <script src="<?=URL_JS?>/jquery.validate.min.js"></script>
     <div class="login-page">
     <div class="form-login">
         <form class="register-form" method="POST">

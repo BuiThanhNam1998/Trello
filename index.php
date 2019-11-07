@@ -27,4 +27,9 @@ if ($controller!='login' && !isset($_SESSION['username'])){
 	header('Location: index.php?controller=login');
 }
 
+if ($controller=='logout'){
+	session_destroy();
+	header('refresh:0');
+}
+
 require_once('routes.php');

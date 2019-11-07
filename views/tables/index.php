@@ -57,6 +57,10 @@ require_once('models\table.php');
 	        $('.popup-profile').hide();
 	    }
 	})
+	//logout
+	$('#btn-log-out').click(function(e){
+		window.location.replace("index.php?controller=logout");
+	});
 	//newtable
 	$('.btn-add-table').click(function(){
 	});
