@@ -64,6 +64,28 @@
 								<img src="<?=WEB_DOMAIN?><?=$task['image']?>" alt="" class="fix-image">
 								<?php } ?>
 					          	<p><?=$task['description']?></p>
+					          	<span><i class="fa fa-clipboard" aria-hidden="true"></i>Mô tả:</span>
+					          	<br>
+					          	<textarea name="description" id="description" cols="60" rows="6"></textarea>
+					          	<button type="button" class="btn btn-save-des" style="margin-top: 10px;" >Lưu</button>
+					          	<hr>
+					          	<span><i class="fa fa-handshake-o" aria-hidden="true"></i>Hoạt động:</span>
+					        </div>
+					        <div class="comment">
+					        	<div class="comment-top">
+					        		<img src="<?=URL_IMAGES?>/shiba-p.jpg" alt="">
+					        		<input class="comment-text" type="text" placeholder="Viết bình luận...">
+					        		<button type="button" class="btn btn-cmt" style="margin-top: 10px;">Đăng</button>
+					        		<hr>
+					        	</div>
+					        	<div class="comment-bot">
+					        		<img src="<?=URL_IMAGES?>/shiba-p.jpg" alt="">
+					        		<span class="user-name">Thịnh BÒNg</span>
+					        		<br>
+					        		<span style="padding-left: 60px;" class="user-cmt">Tối nay nhé :))</span>
+
+
+					        	</div>
 					        </div>
 					        <div class="modal-footer">
 					          	<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
