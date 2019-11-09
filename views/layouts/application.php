@@ -13,7 +13,9 @@
 	<script src="<?=URL_JS?>/bootstrap.min.js"></script>
 	<script src="<?=URL_JS?>/jquery-ui.min.js"></script>
 	<script src="<?=URL_JS?>/jquery.validate.min.js"></script>
+	<?php if($_GET['controller']=='users'){?>
 	<link rel="stylesheet" type="text/css" href="<?=URL_CSS?>/profile.css">
+	<?php } ?>
   </head>
   <body>
   	<?php if ($_GET['controller']!='login') { ?>
