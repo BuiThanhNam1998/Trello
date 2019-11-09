@@ -198,5 +198,8 @@
 			});
 		});
 	</script>
+	<script>
+		console.log(window.location.hash);
+	</script>
 </body>
 </html>

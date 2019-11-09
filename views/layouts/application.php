@@ -15,6 +15,7 @@
 	<script src="<?=URL_JS?>/jquery.validate.min.js"></script>
   </head>
   <body>
+  	<?php if ($_GET['controller']!='login') { ?>
   	<!-- /header -->
 	<header class="header-table">
 		<div class="header-left">
@@ -30,10 +31,10 @@
 				</div>
 				<div class="main-popup-content">
 					<ul>
-						<li><a href="#" title="">Hồ sơ hiển thị</a></li>
+						<li><a id="btn-profile" href="#" title="">Hồ sơ hiển thị</a></li>
 						<li><a href="#" title="">Hoạt động</a></li>
 						<li><a href="#" title="">Cài đăt</a></li>
-						<li><a href="#" title="">Đăng xuất</a></li>
+						<li><a id="btn-log-out" href="#" title="">Đăng xuất</a></li>
 					</ul>
 				</div>
 			</div>
@@ -68,6 +69,8 @@
 			</div>
 		</div>
 	</header>
+ 	<?php } ?>
     <?= @$content ?>
   </body>
+  <script src="<?=URL_JS?>/main.js"></script>
 </html>
