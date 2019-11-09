@@ -2,16 +2,16 @@
 	// database
 
 	// local
-	define('HOST',         'localhost');
-    define('DB_NAME',      'trello');
-    define('DB_USER',      'root');
-    define('DB_PASSWORD',  '');
+	// define('HOST',         'localhost');
+ //    define('DB_NAME',      'trello');
+ //    define('DB_USER',      'root');
+ //    define('DB_PASSWORD',  '');
 
-    // //Real DB 
-    // define('HOST',         '165.22.251.217');
-    // define('DB_NAME',      'trello');
-    // define('DB_USER',      'hoang');
-    // define('DB_PASSWORD',  'HoangWibuhihi');
+    //Real DB 
+    define('HOST',         '165.22.251.217');
+    define('DB_NAME',      'trello');
+    define('DB_USER',      'hoang');
+    define('DB_PASSWORD',  'HoangWibuhihi');
 
     //domain
     define('DOMAIN',       'trello');
