@@ -23,7 +23,7 @@
 		</div>
 		<div class="header-right">
 			<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
-			<a href="#" title="" class="avatar"><img src="<?=URL_IMAGES?>/image_03.jpg" alt=""></a>
+			<a href="#" title="" class="avatar"><img src="<?=$user['image']?>" alt=""></a>
 
 			<div class="main-popup popup-profile">
 				<div class="main-popup-head">
