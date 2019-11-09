@@ -15,7 +15,7 @@
 
     //domain
     define('DOMAIN',       'trello');
-	define('WEB_DOMAIN',   'http://localhost/'.DOMAIN);
+	define('WEB_DOMAIN',   'http://localhost:81/'.DOMAIN);
 	// ASSET
 	define('DIR_THEMES',   'assets');
 	define('URL_IMAGES', 	WEB_DOMAIN.'/'.DIR_THEMES.'/images');

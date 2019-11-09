@@ -53,7 +53,7 @@ input, button{
 .img-profile
 {
 	vertical-align: middle;
-	border-style: circle;
+	border-radius: 50%;
 	height: 20px;
 }
 .img-content
@@ -146,7 +146,6 @@ header a:hover{
 .banner a
 {
 	color: #333;
-	border-radius: 5px;
 	font-weight: 1000;
 }
 .banner a:hover
@@ -182,6 +181,10 @@ div
     text-align: left;
     padding: 0 30px;;
 
+}
+.main-content img
+{
+	width: 100%;
 }
 .detail-text
 {
@@ -240,21 +243,24 @@ div
 }
 .text-field
 {
+	width: 355px;
 	border: 1px solid blue;
 	background: #FAFBFC;
-	padding: 8px 12px;
+	padding: 8px 20px;
+	border-radius: 5px;
 }
 .img-avatar
 { 	
-	margin-left: 70px;
-	margin-top: 0;
-    margin-bottom: 12px;
 	color: #172b4d;
     font-size: 14px;
     font-weight: 600;
 
-	text-align: center; 
- 	display: inline-block;
+	align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4px;
+    margin-top: 16px;
+
 }
 .img-avatar img
 {
@@ -262,5 +268,30 @@ div
 	border-radius: 50%;
 	width: 100px;
 	height: 100px;
+	border: 2px solid blue;
+}
+.img-avatar:hover
+{
+ opacity:: 0.3;
+}
+.change-email-button
+{
+		outline: 0;
+		border: 0;
+		border-radius: 5px;
+		background-color: rgba(9,30,66,.04);
+	    box-sizing: border-box;
+	    position: relative;
 
+}
+span
+{
+ padding-top: 35px;
+}
+input.error{
+	border: 1px solid red;
+}
+label.error
+{
+	color:red;
 }

@@ -35,14 +35,37 @@ class UsersController extends BaseController
     }
   }
 
-  public function update_user(){
-    $cls_user = new User();
-    $id = $_POST['id'];
-    unset($_POST['id']);
-    $cls_user->update_one($id, $_POST);
-    header("location:javascript://history.go(-1)");
+  // public function update_user(){
+  //   $cls_user = new User();
+  //   $id = $_POST['id'];
+  //   unset($_POST['id']);
+  //   if(isset($_POST['save']))
+  //         {
+
+  //           if (isset($_FILES['avatar'])) {
+
+              
+  //             if($_FILES['avatar']['error']> 0)
+  //             {
+  //               echo("File bị lỗi");
+  //             }
+  //             else{
+  //               move_uploaded_file($_FILES['avatar']['tmp_name'], 'assets/images/'. $_FILES['avatar']['name']);
+  //               $_POST['image'] = 'assets/images/'. $_FILES['avatar']['name'];
+  //               // echo "Ảnh đã được câp nhật";
+  //             }
+  //           }
+  //           else{
+  //             echo("Bạn chưa chọn file để upload");
+  //           }
+  //         }
+  //   unset($_POST['save']);
+          
+  //   $cls_user->update_one($id, $_POST);
+
+  //   header("Location: http://localhost:81/trello/index.php?controller=users");
     
-  }
+  // }
 
 
 }
