@@ -1,4 +1,3 @@
-<?php if ($_GET['controller']!='login') { ?>
 <DOCTYPE html>
 <html>
    <head>
@@ -16,6 +15,7 @@
 	<script src="<?=URL_JS?>/jquery.validate.min.js"></script>
   </head>
   <body>
+  	<?php if ($_GET['controller']!='login') { ?>
   	<!-- /header -->
 	<header class="header-table">
 		<div class="header-left">
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 	</header>
-<?php } ?>
+ 	<?php } ?>
     <?= @$content ?>
   </body>
   <script src="<?=URL_JS?>/main.js"></script>

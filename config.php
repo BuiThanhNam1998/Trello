@@ -1,12 +1,20 @@
 <?php
 	// database
-	define('HOST',         'localhost:81');
+	// local
+	define('HOST',         'localhost');
     define('DB_NAME',      'trello');
     define('DB_USER',      'root');
     define('DB_PASSWORD',  '');
+
+    // //Real DB 
+    // define('HOST',         '165.22.251.217');
+    // define('DB_NAME',      'trello');
+    // define('DB_USER',      'hoang');
+    // define('DB_PASSWORD',  'HoangWibuhihi');
+
     //domain
     define('DOMAIN',       'trello');
-	define('WEB_DOMAIN',   'http://localhost:81/'.DOMAIN);
+	define('WEB_DOMAIN',   'http://localhost/'.DOMAIN);
 	// ASSET
 	define('DIR_THEMES',   'assets');
 	define('URL_IMAGES', 	WEB_DOMAIN.'/'.DIR_THEMES.'/images');
