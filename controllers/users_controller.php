@@ -19,16 +19,7 @@ class UsersController extends BaseController
     	$data= array('user' =>$user);
     	$this->render('index', $data);
     }
-    if($table_id){
-      $cls_table = new Table();
-      $cls_sub_table = new SubTable();
-      $cls_task = new Task();
-      $table = $cls_table->get_one($table_id);
-      $sub_tables = $cls_sub_table->get_table($table_id); 
-      $tasks =  $table->get_tasks(); 
-      $data = array('sub_tables' => $sub_tables, 'table' => $table, 'tasks' => $tasks);
-   
-      }
+
     
     else{
       $this->render('error');
