@@ -19,15 +19,15 @@ $(document).click(function(e){
 	}
 });
 
-//profile
-$('#btn-profile').click(function(e){
-	window.location.replace("index.php?controller=users");
-});
+// //profile
+// $('#btn-profile').click(function(e){
+// 	window.location.replace("index.php?controller=users");
+// });
 
-//logout
-$('#btn-log-out').click(function(e){
-	window.location.replace("index.php?controller=logout");
-});
+// //logout
+// $('#btn-log-out').click(function(e){
+// 	window.location.replace("index.php?controller=logout");
+// });
 	
 //newtable
 $('.btn-add-table').click(function(){

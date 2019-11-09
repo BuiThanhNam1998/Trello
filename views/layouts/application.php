@@ -13,6 +13,7 @@
 	<script src="<?=URL_JS?>/bootstrap.min.js"></script>
 	<script src="<?=URL_JS?>/jquery-ui.min.js"></script>
 	<script src="<?=URL_JS?>/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?=URL_CSS?>/profile.css">
   </head>
   <body>
   	<?php if ($_GET['controller']!='login') { ?>
@@ -31,10 +32,10 @@
 				</div>
 				<div class="main-popup-content">
 					<ul>
-						<li><a id="btn-profile" href="#" title="">Hồ sơ hiển thị</a></li>
-						<li><a href="#" title="">Hoạt động</a></li>
-						<li><a href="#" title="">Cài đăt</a></li>
-						<li><a id="btn-log-out" href="#" title="">Đăng xuất</a></li>
+						<li><a id="btn-profile" href="?controller=users&tab=profile-tab" title="">Hồ sơ hiển thị</a></li>
+						<li><a href="?controller=users&tab=operation-tab" title="">Hoạt động</a></li>
+						<li><a href="?controller=users&tab=setting-tab" title="">Cài đăt</a></li>
+						<li><a id="btn-log-out" href="?controller=logout" title="">Đăng xuất</a></li>
 					</ul>
 				</div>
 			</div>
