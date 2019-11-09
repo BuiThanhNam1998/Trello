@@ -1,5 +1,6 @@
 <?php
 	// database
+
 	// local
 	define('HOST',         'localhost');
     define('DB_NAME',      'trello');
