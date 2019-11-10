@@ -47,6 +47,7 @@ class Basic{
 	        else $value.=',"'.addslashes($val).'"';
 	      }
 	    $db = DB::getInstance();
+	    // die('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
 	

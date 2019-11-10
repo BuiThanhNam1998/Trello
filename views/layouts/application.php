@@ -26,11 +26,11 @@
 		</div>
 		<div class="header-right">
 			<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
-			<a href="#" title="" class="avatar"><img src="<?=$user['image']?>" alt=""></a>
+			<a href="#" title="" class="avatar"><img src="<?=$_SESSION['user_image']?>" alt=""></a>
 
 			<div class="main-popup popup-profile">
 				<div class="main-popup-head">
-					<span>Bùi Thanh Nam</span>
+					<span><?=$user['fullname']?></span>
 				</div>
 				<div class="main-popup-content">
 					<ul>
@@ -46,11 +46,11 @@
 				<div class="main-popup-head">
 					<span>Tạo bảng</span>
 				</div>
-				<div class="main-popup-content">
+				<div class="main-popup-content main-table">
 					<ul>
-						<li><a href="#" title="" class="add-table-icon"><i class="fa fa-trello" aria-hidden="true">Tạo bảng...</i> <br> 
+						<li><a href="#" title="" class="add-table-icon"><i class="fa fa-trello" aria-hidden="true"></i><span>Tạo bảng...</span> <br> 
 						Một bảng được tạo thành từ các thẻ được sắp xếp trong danh sách. Sử dụng bảng để quản lý các dự án, theo dõi thông tin, hoặc tổ chức bất cứ việc gì.</a></li>
-						<li><a href="#" title=""><i class="fa fa-group" aria-hidden="true">Tạo nhóm...</i> 	<br>
+						<li><a href="#" title=""><i class="fa fa-group" aria-hidden="true">  </i> <span>Tạo nhóm...</span>	<br>
 						Một nhóm là tập hợp các bảng và mọi người. Sử dụng nhóm để tổ chức công ty của bạn, hỗ trợ người bận rộn, gia đình hoặc bạn bè.</a></li>
 						
 					</ul>
@@ -61,12 +61,12 @@
 					<span>Thêm mới</span>
 				</div>
 				<div class="main-popup-content">
-					<form action="" method="post">
-						<input type="hidden" name="controller" value="tables">
-						<input type="hidden" name="action" value="add_table">
+					<form action="?controller=tables&action=add_table" method="POST" enctype="multipart/form-data" >
+						<!-- <input type="hidden" name="controller" value="tables">
+						<input type="hidden" name="action" value="add_table"> -->
 						<input type="text" name="name" placeholder="Thêm tiêu đề">
-						<input type="hidden" name="image" value="123">
-	  					<button class="btn-add-table" type="submit">Lưu</button>
+						<input type="file" name="image">
+	  					<button class="btn-add-table" name="save-table" type="submit">Lưu</button>
 					</form>
 				</div>
 			</div>

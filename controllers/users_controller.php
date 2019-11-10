@@ -43,7 +43,7 @@ class UsersController extends BaseController
               else{
                 move_uploaded_file($_FILES['avatar']['tmp_name'], 'assets/images/'. $_FILES['avatar']['name']);
                 $_POST['image'] = 'assets/images/'. $_FILES['avatar']['name'];
-                // echo "Ảnh đã được câp nhật";
+                  echo "Ảnh đã được câp nhật";
               }
             }
             else{
@@ -59,3 +59,4 @@ class UsersController extends BaseController
 
 }
  ?>
+ 
