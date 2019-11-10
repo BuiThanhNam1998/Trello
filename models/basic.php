@@ -47,6 +47,7 @@ class Basic{
 	        else $value.=',"'.addslashes($val).'"';
 	      }
 	    $db = DB::getInstance();
+	    // die('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	    $db->query('insert into '.$this->table.' ('.$field.') VALUES('.$value.')');
 	}
 	
@@ -81,6 +82,7 @@ class Basic{
   		}
   		$db = DB::getInstance(); 
   		$db->query('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
+  		print_r('UPDATE '.$this->table.' SET '.$value.' WHERE id = '.$id);
   	}
   	function delete_one($id){
   		if(!$id){

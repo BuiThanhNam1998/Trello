@@ -1,4 +1,3 @@
-
 <div class="content" tabindex="-1">
 	<div class="content-header">
 		<h2><?= $user['username'] ?></h2>
@@ -86,8 +85,7 @@
 
 			
 
-
-			<div id="operation" class="tab-pane container">
+			<div id="operation" class="tab-pane container ">
 				<h2> A@###########</h2>
 				<p>skafjlasfffffffkasfjklasfljkasfjlkasljkfasjlkfsajlkflasjkfjlkasfjlk</p>
 			</div>
@@ -97,9 +95,70 @@
 				<p>skafjlasfffffffkasfjklasfljkasfjlkasljkfasjlkfsajlkflasjkfjlkasfjlk</p>
 			</div>
 
-			<div id="setting" class="tab-pane container">
+			<div id="setting" class="tab-pane container active">
+				<div class="main-account-wrapper">
+					<div class="main-account-content">
+						<form class="" method="POST" action="?controller=users&action=update_pass">
+							<div class="window-module">
+								<h5>Thông tin tài khoản</h5>
+								<hr/>
+							
+									<span class="big-link">Cài đặt lại mật khẩu</span>
+									<hr/>
+										<div class="title-account-pass">
+											<span>Mật khẩu</span>
+										</div>
+										<div>
+											<input id="pass" type="password" name="pass" class="text-field-pass" required>
+										</div>
+
+										<div class="title-account-pass">
+											<span>Nhập lại mật khẩu</span>
+										</div>
+										<div>
+											<input id="confirm_pass" type="password" name="passagain" class="text-field-pass" required>
+										</div>
+										<button class="cf-button-pass" onclick="passsuccess()" type="submit" name="confirm_pass">Confirm</button>
+									<span class="big-link">Thay đổi ngôn ngữ</span>
+							
+							</div>
+								
+							<div class="window-module">
+								<h5>Thông báo</h5>
+								<hr/>
+								<a href="" class="big-link">
+									<span>Thay đổi Email thông báo</span>
+								</a>
+
+								<a href="" class="big-link">
+									<span>Cho phép thông báo Desktop</span>
+								</a>
+							</div>
+
+							<div class="window-module">
+								<h5>Gợi ý</h5>
+								<hr/>
+								<a href="" class="big-link">
+									<span>Vô hiệu hóa gợi ý</span>
+								</a>
+							</div>
+							
+
+							<div class="window-module">
+								<h5>Quyền truy cập</h5>
+								<hr/>
+								<a href="" class="big-link">
+									<span>Cho phép sử dụng chế độ mù màu</span>
+								</a>
+							</div>
+							
+							
+
+						</form>
+					</div>
 					
-					
+				</div>
+				
 			</div>
 
 			<div id="premium" class="tab-pane container">

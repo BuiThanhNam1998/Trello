@@ -53,12 +53,21 @@ class UsersController extends BaseController
     unset($_POST['save']);
           
     $cls_user->update_one($id, $_POST);
-    
 
-    header("Location: http://localhost:81/trello/index.php?controller=users"); 
+    header("Location: http://localhost:81/trello/index.php?controller=users");  
   }
-
-
+  public function update_pass()
+  {
+    if(isset($_POST['confirm_pass']))
+    {
+      $cls_user = new User();
+      $id = $_SESSION['userid'];
+      $arr['password']=$_POST['passagain'];
+      $cls_user->update_one($id, $arr);
+      header("Location: http://localhost:81/trello/index.php?controller=users");
+    }
+  }
 
 }
  ?>
+ 

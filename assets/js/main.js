@@ -63,3 +63,21 @@ $(document).click(function(e){
 	    $('.popup-menu-table').hide();
 	}
 });
+// //confirm password
+// var password = document.getElementById("pass")
+//   , confirm_password = document.getElementById("confirm_pass");
+
+// function validatePassword(){
+// 	console.log('a123');
+//   if(password.value != confirm_password.value) {
+//     confirm_password.setCustomValidity("Mật khẩu nhập không khớp");
+//   } else {
+//     confirm_password.setCustomValidity('');
+//   }
+// }
+// password.onchange = validatePassword();
+// confirm_password.onkeyup = validatePassword();
+ function passsuccess()
+ {
+ 	window.alert("Bạn đã đổi mật khẩu thành công")
+ }

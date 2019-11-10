@@ -3,10 +3,10 @@ $controllers = array(
   'pages' => ['home', 'error'],
   'tables' => ['index', 'add_table'],
   'login' => ['index'],
-  'tables' => ['index'],
+  'tables' => ['index', 'add_table'],
   'sub_tables' => ['index', 'add_sub_table', 'delete_sub_table'],
   'tasks' => ['index', 'set_sub_table', 'add_task'],
-  'users' => ['index','update_user'],
+  'users' => ['index','update_user','update_pass'],
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

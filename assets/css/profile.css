@@ -295,3 +295,65 @@ label.error
 {
 	color:red;
 }
+
+.big-link
+{
+    display: block;
+    margin: 4px 0 4px 40px;
+    padding: 12px;
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+}
+.window-module
+{
+	clear: both;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.main-account-wrapper
+{
+	max-width: 900px;
+	background-color : white;
+	clear: both;
+	display: table;
+
+	margin: 0 auto; 
+	padding: 32px;
+	position: relative; 
+}
+.main-account-content
+{
+	background- color: white;
+	text-align:center;
+	margin-top: auto;
+	width: 600px;
+    text-align: left;
+    padding: 0 30px;;
+
+}
+.title-acoount-pass
+{
+	color: #172b4d;
+    font-size: 13px;
+    font-weight: 600;
+	margin-top: 12px
+	display: flex;
+}
+.text-field-pass{
+	margin: 0 0 20px;
+	width: 355px;
+	border: 1px solid blue;
+	background: #FAFBFC;
+	padding: 8px 20px;
+	border-radius: 5px;
+}
+
+.cf-button-pass
+{
+	background: #5AAC44;
+	padding: 6px 12px;
+	margin: 5px 0px 5px; 
+}

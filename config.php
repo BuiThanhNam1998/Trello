@@ -13,6 +13,11 @@
     define('DB_USER',      'hoang');
     define('DB_PASSWORD',  'HoangWibuhihi');
 
+    // define('HOST',         'localhost');
+    // define('DB_NAME',      'trello');
+    // define('DB_USER',      'root');
+    // define('DB_PASSWORD',  '');
+
     //domain
     define('DOMAIN',       'trello/');
 	define('WEB_DOMAIN',   'http://localhost:81/'.DOMAIN);
