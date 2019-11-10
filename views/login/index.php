@@ -12,6 +12,9 @@ if (isset($_POST["btn_login"])){
     if ($result){
         $_SESSION['username'] = $username;
         $_SESSION['userid'] = $result[0];
+        $_SESSION['user_image']  = $result['image'];
+        $_SESSION['fullname']  = $result['fullname'];
+        // die($_SESSION['user_image']);
         header('Location: index.php?controller=tables');
     }
 }
