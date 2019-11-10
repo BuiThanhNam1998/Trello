@@ -1,21 +1,4 @@
-<?php
-// echo '<ul>';
-// foreach ($tables as $table) {
-//   echo '<li>
-//     <a href="#">' . $table->name . '</a>
-//   </li>';
-// }
-// echo '</ul>';
-require_once('models\table.php');
-    if (isset($_POST['name'])){
-		$tbl = new Table();
-		$name = $_POST['name'];
-		$image = URL_DEFAULT_TABLE_IMAGE;
-		$inputTbl = ['name'=> $name, 'status'=> 1, 'image' => $image, 'user_id' => $_SESSION['userid']];
-		$tbl->insert_one($inputTbl);
-		Header( "Location: index.php?controller=tables" );
-    }
-?>
+
 <body>
 	<!-- content -->
 	<section class="main-content-home">
