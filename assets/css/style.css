@@ -284,6 +284,9 @@ header a.avatar img{
 	padding: 20px;
 
 }
+.comment input{
+	border-radius: 15px;
+}
 .comment-top input{
 	height:60px;
 	width: 400px;
@@ -304,4 +307,14 @@ header a.avatar img{
 	height: 40px;
 	border-radius: 50%;
 	
+}
+.modal-des textarea{
+	border-radius: 10px;
+	border-color: #cdcdcd;
+}
+.modal-des{
+	font-weight: 700;
+}
+.modal-des i{
+	margin-right: 15px;
 }

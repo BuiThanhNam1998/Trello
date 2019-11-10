@@ -59,7 +59,7 @@
 					          	<h4 class="modal-title"><?=$task['name']?></h4>
 					          	<button type="button" class="close" data-dismiss="modal">&times;</button>
 					        </div>
-					        <div class="modal-body">
+					        <div class="modal-body modal-des">
 					        	<?php if($task['image']){?>
 								<img src="<?=WEB_DOMAIN?><?=$task['image']?>" alt="" class="fix-image">
 								<?php } ?>
