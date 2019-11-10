@@ -34,10 +34,10 @@
 				</div>
 				<div class="main-popup-content">
 					<ul>
-						<li><a id="btn-profile" href="?controller=users&tab=profile-tab" title="">Hồ sơ hiển thị</a></li>
-						<li><a href="?controller=users&tab=operation-tab" title="">Hoạt động</a></li>
-						<li><a href="?controller=users&tab=setting-tab" title="">Cài đăt</a></li>
-						<li><a id="btn-log-out" href="?controller=logout" title="">Đăng xuất</a></li>
+						<li><a id="btn-profile" href="?controller=users&tab=profile-tab" title=""> <span>Hồ sơ hiển thị</span> </a></li>
+						<li><a href="?controller=users&tab=operation-tab" title=""><span>Hoạt động</span></a></li>
+						<li><a href="?controller=users&tab=setting-tab" title=""> <span>Cài đăt</span></a></li>
+						<li><a id="btn-log-out" href="?controller=logout" title=""><span>Đăng xuất</span></a></li>
 					</ul>
 				</div>
 			</div>
