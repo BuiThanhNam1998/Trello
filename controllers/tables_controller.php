@@ -13,7 +13,10 @@ class TablesController extends BaseController
   {
     $uid = $_SESSION['userid'];
     $cls_table = new Table();
-    $tables = $cls_table->get_by_user_id($uid);
+    $cls_user = new User();
+    $tables_1 = $cls_user->get_tables($uid);
+    $tables_2 = $cls_user->get_tables_1($uid);
+    $tables = array_unique(array_merge($tables_1, $tables_2), SORT_REGULAR);
     $data = array('tables' => $tables);
     $this->render('index', $data);
   }

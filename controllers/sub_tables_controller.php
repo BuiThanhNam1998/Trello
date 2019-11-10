@@ -34,6 +34,7 @@ class SubTablesController extends BaseController
     $arr = $_POST;
     $special = time().rand(10, 99);
     $arr['special'] = $special;
+    $arr['user_id'] = $_SESSION['userid'];
     $cls_sub_table = new SubTable();
     $cls_sub_table->insert_one($arr);
     $sub_table = $cls_sub_table->get_one_special($special);

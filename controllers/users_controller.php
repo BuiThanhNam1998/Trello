@@ -55,9 +55,7 @@ class UsersController extends BaseController
     $cls_user->update_one($id, $_POST);
 
     header("Location: http://localhost:81/trello/index.php?controller=users");
-    
   }
-
 
 }
  ?>
