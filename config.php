@@ -14,7 +14,7 @@
     define('DB_PASSWORD',  'HoangWibuhihi');
 
     //domain
-    define('DOMAIN',       'trello');
+    define('DOMAIN',       'trello/');
 	define('WEB_DOMAIN',   'http://localhost:81/'.DOMAIN);
 	// ASSET
 	define('DIR_THEMES',   'assets');

@@ -1,5 +1,4 @@
 
-
 <div class="content" tabindex="-1">
 	<div class="content-header">
 		<h2><?= $user['username'] ?></h2>
@@ -99,8 +98,8 @@
 			</div>
 
 			<div id="setting" class="tab-pane container">
-				<h2> 123455678</h2>
-				<p>skafjlasfffffffkasfjklasfljkasfjlkasljkfasjlkfsajlkflasjkfjlkasfjlk</p>
+					
+					
 			</div>
 
 			<div id="premium" class="tab-pane container">

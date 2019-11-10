@@ -18,7 +18,7 @@
 	<?php } ?>
   </head>
   <body>
-  	<?php if ($_GET['controller']!='login') { ?>
+  	<?php if ($_GET['controller']!='login') { $cls_user = new User(); $user = $cls_user->get_one($_SESSION['userid']); ?>
   	<!-- /header -->
 	<header class="header-table">
 		<div class="header-left">
@@ -26,7 +26,7 @@
 		</div>
 		<div class="header-right">
 			<a href="#" title=""><i class="fa fa-user" aria-hidden="true"></i></a>
-			<a href="#" title="" class="avatar"><img src="<?=$_SESSION['user_image']?>" alt=""></a>
+			<a href="#" title="" class="avatar"><img src="<?=$user['image']?>" alt=""></a>
 
 			<div class="main-popup popup-profile">
 				<div class="main-popup-head">

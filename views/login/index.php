@@ -10,12 +10,12 @@ if (isset($_POST["btn_login"])){
     $inputUser = new User();
     $result = $inputUser->trackUserLogin($username, $password);
     if ($result){
-        $_SESSION['username'] = $username;
         $_SESSION['userid'] = $result[0];
-        $_SESSION['user_image']  = $result['image'];
-        $_SESSION['fullname']  = $result['fullname'];
-        // die($_SESSION['user_image']);
-        header('Location: index.php?controller=tables');
+        $_SESSION['username'] = $result["username"];
+        header('Location:?controller=tables');
+    }
+    else{
+        die('Sai tài khoản mật khẩu');
     }
 }
 
@@ -57,9 +57,9 @@ if (isset($_POST["btn_register"])){
     <div class="form-login">
         <form class="register-form" method="POST">
             <input name="username" type="text" placeholder="User name" required>
-            <input name="password" type="text" placeholder="Password" required>
+            <input name="password" type="password" placeholder="Password" required>
             <input name="email" type="text" placeholder="Địa chỉ Email" required>
-            <button name="btn_register" type="submit">Đăng ký</button>
+            <button name="btn_register" onclick="RegisterSuccesss()" type="submit">Đăng ký</button>
             <p class="message">Bạn đã sẵn sàng Đăng nhập? <a href="#">Đăng nhập</a></p>
         </form>
         <form class="login-form" method="POST">
@@ -154,4 +154,8 @@ if (isset($_POST["btn_register"])){
                 $('form').animate({height:"toggle",opacity:"toggle"},"slow");
             });
         });
+            function RegisterSuccesss()
+            {
+                window.alert("Đăng kí thành công");
+            }
     </script>
